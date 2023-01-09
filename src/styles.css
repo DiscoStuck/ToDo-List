@@ -1,0 +1,28 @@
+/* Structure */
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    height: 100px;
+    background-color: aqua;
+}
+
+.content{
+    height: 100%;
+    display: flex;
+}
+
+.leftBar{
+    width: 22%;
+    background-color: blue;
+    height: 100%;
+}
+
+.rightBar{
+    width: 78%;
+    background-color: brown;
+    height: 100%;
+}
