@@ -9,6 +9,11 @@ module.exports = {
       template: "src/index.html",
     }),
   ],
+  devtool: "source-map",
+  stats: {
+    errorDetails: true,
+    children: true,
+  },
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
@@ -16,6 +21,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
       {
         test: /\.(png|jpg|gif)$/i,
         use: [
@@ -31,6 +40,10 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.svg/,
+        type: "asset/inline",
       },
     ],
   },

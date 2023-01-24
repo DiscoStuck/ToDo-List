@@ -1,28 +1,182 @@
-/* Structure */
+/* Colors */
+:root{
+    --lightGrey1: #f8f8f8;
+    --lightGrey2: #F1F1F1;
+    --lightGrey3: #E7E7E7;
+    --darkGrey1: #343434;
+}
+
+
 body{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: Tahoma, sans-serif;
+    color: var(--darkGrey1);
 }
 
-.header{
-    height: 100px;
-    background-color: aqua;
-}
-
-.content{
+.content {
     height: 100%;
     display: flex;
+        flex-grow: 1;
+        align-items: stretch;
 }
 
+/* Header */
+.header{
+    min-width: 1000px;
+    height: 100px;
+    background-color: var(--lightGrey3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header h2{
+    font-size: 40px;
+    margin-left: 50px;
+}
+
+
+
+/* Left bar */
 .leftBar{
+    min-width: 300px;
     width: 22%;
-    background-color: blue;
-    height: 100%;
+    background-color: var(--lightGrey2);
+    padding: 30px;
 }
 
-.rightBar{
-    width: 78%;
-    background-color: brown;
-    height: 100%;
+.quickAccessMenu {
+    width: 100%;
+    margin-top: 20px;
 }
+
+.quickAccess, .projectAccess{
+    box-sizing: border-box;
+    height: 60px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    display: flex;
+    padding: 0 25px 0 25px;
+}
+
+.leftBar h3{
+    font-size: 45px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.quickAccess{
+    font-size: 26px;
+    background-color: var(--lightGrey3);
+        flex-direction: column;
+            justify-content: center;
+}
+
+
+.projectAccess {
+    background-color: var(--lightGrey3);
+    font-size: 18px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.projectAccess p{
+    flex-grow: 1;
+}
+
+.newProjectLeft{
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.newIcon{
+    width: 30px;
+    height: 30px;
+}
+
+/* Right bar */
+.rightBar{
+    min-width: 700px;
+    width: 78%;
+    background-color: var(--lightGrey1);
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    gap: 30px;
+}
+
+.projectCard{
+min-height: 60px;
+width: 100%;
+    background-color: var(--lightGrey3);
+border-radius: 5px;
+}
+
+.projectRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.mainRow{
+    min-height:60px;
+}
+
+.flag{
+    width: 30px;
+    height: 30px;
+    flex-grow: 0;
+    flex: 0 0 auto;
+}
+
+.arrow {
+    width: 20px;
+    height: 20px;
+    rotate: 180deg;
+    flex-grow: 0;
+    flex: 0 0 auto;
+}
+
+.projectRow h3{
+flex: 1 1 auto;
+font-size: 18px;
+}
+
+.extendedRow{
+    padding: 5px 15px 15px 20px;
+    gap: 30px;
+    min-height: 45px;
+}
+
+.description{
+    margin-right: 20px;
+}
+.date{
+    flex-grow: 0 1 auto;
+}
+
+.down{
+    rotate: 90deg;
+}
+
+.editIcon{
+width: 22px;
+height: 22px;
+fill: black;
+stroke: black;
+}
+
+.deleteIcon{
+    width: 30px;
+    height: 30px;
+}
+
+
+
