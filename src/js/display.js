@@ -122,4 +122,120 @@ function contractTask(task) {
   moveArrow.classList.remove("down");
 }
 
-export { displayProject };
+// PopUps
+
+function createInputText(div, name, fill) {
+  const inputDiv = document.createElement("div");
+  inputDiv.classList.add("inputDiv");
+  div.appendChild(inputDiv);
+  const label = document.createElement("label");
+  label.innerText = name;
+  label.for = name;
+  inputDiv.appendChild(label);
+  const input = document.createElement("input");
+  input.name = name;
+  input.value = fill;
+  inputDiv.appendChild(input);
+}
+
+function createInputDate(div, name, date) {
+  const inputDiv = document.createElement("div");
+  inputDiv.classList.add("inputDiv");
+  div.appendChild(inputDiv);
+  const label = document.createElement("label");
+  label.innerText = name;
+  label.for = name;
+  inputDiv.appendChild(label);
+  const input = document.createElement("input");
+  input.name = name;
+  input.type = "date";
+  input.value = date;
+  inputDiv.appendChild(input);
+}
+
+function createSelectPriority(div) {
+  const inputDiv = document.createElement("div");
+  inputDiv.classList.add("inputDiv");
+  div.appendChild(inputDiv);
+  const label = document.createElement("label");
+  label.innerText = "Priority";
+  label.name = "priority";
+  inputDiv.appendChild(label);
+  const select = document.createElement("select");
+  select.name = "priority";
+  inputDiv.appendChild(select);
+  const low = document.createElement("option");
+  low.value = "low";
+  low.innerText = "Low";
+  select.appendChild(low);
+  const mid = document.createElement("option");
+  mid.value = "mid";
+  mid.innerText = "Medium";
+  select.appendChild(mid);
+  const high = document.createElement("option");
+  high.value = "high";
+  high.innerText = "High";
+  select.appendChild(high);
+}
+
+function createProject() {
+  const overlay = document.createElement("div");
+  overlay.classList.add("overlay");
+  document.body.appendChild(overlay);
+  const popDiv = document.createElement("div");
+  popDiv.classList.add("popUp");
+  document.body.appendChild(popDiv);
+  const h2 = document.createElement("h2");
+  h2.innerText = "New Project";
+  popDiv.appendChild(h2);
+  const hr = document.createElement("hr");
+  popDiv.appendChild(hr);
+  createInputText(popDiv, "Title", "");
+  const button = document.createElement("button");
+  button.classList.add("sendForm");
+  button.innerText = "Create Project";
+  popDiv.appendChild(button);
+}
+
+function editProject(title) {
+  const overlay = document.createElement("div");
+  overlay.classList.add("overlay");
+  document.body.appendChild(overlay);
+  const popDiv = document.createElement("div");
+  popDiv.classList.add("popUp");
+  document.body.appendChild(popDiv);
+  const h2 = document.createElement("h2");
+  h2.innerText = "Edit Project";
+  popDiv.appendChild(h2);
+  const hr = document.createElement("hr");
+  popDiv.appendChild(hr);
+  createInputText(popDiv, "Title", title);
+  const button = document.createElement("button");
+  button.classList.add("sendForm");
+  button.innerText = "Edit";
+  popDiv.appendChild(button);
+}
+
+function createTask(project) {
+  const overlay = document.createElement("div");
+  overlay.classList.add("overlay");
+  document.body.appendChild(overlay);
+  const popDiv = document.createElement("div");
+  popDiv.classList.add("popUp");
+  document.body.appendChild(popDiv);
+  const h2 = document.createElement("h2");
+  h2.innerText = "New Task";
+  popDiv.appendChild(h2);
+  const hr = document.createElement("hr");
+  popDiv.appendChild(hr);
+  createInputText(popDiv, "Title", "");
+  createInputText(popDiv, "Description", "");
+  createInputDate(popDiv, "Date", new Date().toISOString().substring(0, 10));
+  createSelectPriority(popDiv);
+  const button = document.createElement("button");
+  button.classList.add("sendForm");
+  button.innerText = "Create Task";
+  popDiv.appendChild(button);
+}
+
+export { displayProject, createProject, editProject, createTask };

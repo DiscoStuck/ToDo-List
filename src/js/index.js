@@ -14,5 +14,6 @@ arrProjects[0].tasks = new manage.task(
 );
 
 display.displayProject(arrProjects[0]);
+display.createTask();
 
 console.log(arrProjects);
