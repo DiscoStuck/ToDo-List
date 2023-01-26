@@ -1,8 +1,10 @@
+import { format, isSameDay, isSameWeek } from "date-fns";
+
 // Project
 class project {
   constructor(title) {
     this.title = title;
-    this.taskstasks = [];
+    this.tasks = [];
   }
 
   static addProject(title, arr) {
@@ -70,6 +72,4 @@ class task {
   }
 }
 
-project.addProject("Project 1", Projects);
-
-console.log(Projects);
+export { project, task };

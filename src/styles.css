@@ -18,8 +18,8 @@ body{
 .content {
     height: 100%;
     display: flex;
-        flex-grow: 1;
-        align-items: stretch;
+    flex-grow: 1;
+    align-items: stretch;
 }
 
 /* Header */
@@ -89,9 +89,9 @@ body{
 }
 
 .newProjectLeft{
-display: flex;
-align-items: center;
-gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .newIcon{
@@ -111,10 +111,10 @@ gap: 10px;
 }
 
 .projectCard{
-min-height: 60px;
-width: 100%;
+    min-height: 60px;
+    width: 100%;
     background-color: var(--lightGrey3);
-border-radius: 5px;
+    border-radius: 5px;
 }
 
 .projectRow{
@@ -145,8 +145,8 @@ border-radius: 5px;
 }
 
 .projectRow h3{
-flex: 1 1 auto;
-font-size: 18px;
+    flex: 1 1 auto;
+    font-size: 18px;
 }
 
 .extendedRow{
@@ -167,10 +167,10 @@ font-size: 18px;
 }
 
 .editIcon{
-width: 22px;
-height: 22px;
-fill: black;
-stroke: black;
+    width: 22px;
+    height: 22px;
+    fill: black;
+    stroke: black;
 }
 
 .deleteIcon{
@@ -178,5 +178,75 @@ stroke: black;
     height: 30px;
 }
 
+/* Pop-ups */
+.overlay{
+    position: fixed;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+}
+
+.overlay.active{
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.popUp{
+    box-sizing: border-box;
+    width: 400px;
+    min-height: 400px;
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.4);
+    position: fixed;
+    transform: translate(-50%, -50%) scale(1);
+    top: 50%;
+    left: 50%;
+    background-color: var(--lightGrey1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    z-index: 2;
+    padding: 50px 70px;
+}
 
 
+.popUp h2{
+    text-align: center;
+    font-size: 45px;
+}
+
+input, input:focus-visible, input:focus{
+    height: 30px;
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: rgb(148, 148, 148);
+    background-color: white;
+    border-style: solid;
+    outline: none;
+    padding-left: 5px;
+}
+
+.inputDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label{
+    font-size: 17px;
+}
+
+button{
+    height: 35px;
+    font-size: 17px;
+}
+
+.popUp hr{
+    width: 100%;
+    height: 1px;
+    background-color: var(--darkGrey1)
+
+}
