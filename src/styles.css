@@ -157,6 +157,7 @@ body{
 
 .description{
     margin-right: 20px;
+    flex-basis: 100%;
 }
 .date{
     flex-grow: 0 1 auto;
@@ -171,11 +172,13 @@ body{
     height: 22px;
     fill: black;
     stroke: black;
+    flex-basis: auto;
 }
 
 .deleteIcon{
     width: 30px;
     height: 30px;
+    flex-basis: auto;
 }
 
 /* Pop-ups */

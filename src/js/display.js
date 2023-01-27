@@ -1,4 +1,7 @@
 import { format, isSameDay, isSameWeek } from "date-fns";
+import * as listen from "./listen.js";
+import * as manage from "./manage.js";
+import * as index from "./index.js";
 
 const svgContext = require.context("../svg", false, /\.svg$/);
 const svg = {};
@@ -6,8 +9,6 @@ svgContext.keys().forEach((key) => {
   const fileName = key.replace("./", "").replace(".svg", "");
   svg[fileName] = svgContext(key);
 });
-
-console.log(svg);
 
 // Projects
 
@@ -23,10 +24,18 @@ function displayProject(project) {
   const edit = document.createElement("img");
   edit.src = svg.edit;
   edit.classList.add("editIcon");
+  listen.addListener(edit, editProject, project);
   projectAccess.appendChild(edit);
   const deleteIcon = document.createElement("img");
   deleteIcon.src = svg.delete;
   deleteIcon.classList.add("deleteIcon");
+  listen.addListener(deleteIcon, deleteProject, project);
+  listen.addListener(
+    deleteIcon,
+    manage.project.deleteProject,
+    project.title,
+    index.arrProjects
+  );
   projectAccess.appendChild(deleteIcon);
 }
 
@@ -49,16 +58,19 @@ function deleteAllProjects() {
 function displayTask(task) {
   const rightBar = document.querySelector(".rightBar");
   const projectCard = document.createElement("div");
-  projectCard.classList.add(`projectCard ${task.title}`);
+  projectCard.classList.add(`projectCard`);
+  projectCard.classList.add(task.title);
   rightBar.appendChild(projectCard);
   const mainRow = document.createElement("div");
-  mainRow.classList.add("projectRow mainROw");
+  mainRow.classList.add("projectRow");
+  mainRow.classList.add("mainRow");
   projectCard.appendChild(mainRow);
   const flag = document.createElement("img");
   flag.classList.add("flag");
-  if (task.priority === "low") flag.src = "svg/green-flag-icon.svg";
-  else if (task.priority === "medium") flag.src = "svg/yellow-flag-icon.svg";
-  else flag.src = "svg/red-flag-icon.svg";
+  console.log(svg);
+  if (task.priority === "low") flag.src = svg.greenFlagIcon;
+  else if (task.priority === "medium") flag.src = svg.yellowFlagIcon;
+  else flag.src = svg.redFlagIcon;
   mainRow.appendChild(flag);
   const title = document.createElement("h3");
   title.innerText = task.title;
@@ -68,7 +80,7 @@ function displayTask(task) {
   date.innerText = task.dueDate;
   mainRow.appendChild(date);
   const arrow = document.createElement("img");
-  arrow.src = "svg/arrow.svg";
+  arrow.src = svg.arrow;
   arrow.classList.add("arrow");
   mainRow.appendChild(arrow);
 }
@@ -94,9 +106,11 @@ function displayTasksWeek(arr) {
 }
 
 function expandTask(task) {
-  const projectCard = document.querySelector(`.projectCard ${task.title}`);
+  const projectCard = document.querySelector(`.projectCard.${task.title}`);
   const extendedRow = document.createElement("div");
-  extendedRow.classList.add("projectRow extendedRow");
+  console.log(projectCard);
+  extendedRow.classList.add("projectRow");
+  extendedRow.classList.add("extendedRow");
   projectCard.appendChild(extendedRow);
   const description = document.createElement("p");
   description.classList.add("description");
@@ -104,11 +118,11 @@ function expandTask(task) {
   extendedRow.appendChild(description);
   const editIcon = document.createElement("img");
   editIcon.classList.add("editIcon");
-  editIcon.src = "./svg/edit.svg";
+  editIcon.src = svg.edit;
   extendedRow.appendChild(editIcon);
   const deleteIcon = document.createElement("img");
   deleteIcon.classList.add("deleteIcon");
-  deleteIcon.src = "./svg/delete.svg";
+  deleteIcon.src = svg.delete;
   extendedRow.appendChild(deleteIcon);
   const moveArrow = projectCard.querySelector(".arrow");
   moveArrow.classList.add("down");
@@ -123,6 +137,21 @@ function contractTask(task) {
 }
 
 // PopUps
+
+function createPopUp(title) {
+  const overlay = document.createElement("div");
+  overlay.classList.add("overlay");
+  document.body.appendChild(overlay);
+  const popDiv = document.createElement("div");
+  popDiv.classList.add("popUp");
+  document.body.appendChild(popDiv);
+  const h2 = document.createElement("h2");
+  h2.innerText = title;
+  popDiv.appendChild(h2);
+  const hr = document.createElement("hr");
+  popDiv.appendChild(hr);
+  return popDiv;
+}
 
 function createInputText(div, name, fill) {
   const inputDiv = document.createElement("div");
@@ -179,17 +208,7 @@ function createSelectPriority(div) {
 }
 
 function createProject() {
-  const overlay = document.createElement("div");
-  overlay.classList.add("overlay");
-  document.body.appendChild(overlay);
-  const popDiv = document.createElement("div");
-  popDiv.classList.add("popUp");
-  document.body.appendChild(popDiv);
-  const h2 = document.createElement("h2");
-  h2.innerText = "New Project";
-  popDiv.appendChild(h2);
-  const hr = document.createElement("hr");
-  popDiv.appendChild(hr);
+  const popDiv = createPopUp("New Project");
   createInputText(popDiv, "Title", "");
   const button = document.createElement("button");
   button.classList.add("sendForm");
@@ -197,19 +216,9 @@ function createProject() {
   popDiv.appendChild(button);
 }
 
-function editProject(title) {
-  const overlay = document.createElement("div");
-  overlay.classList.add("overlay");
-  document.body.appendChild(overlay);
-  const popDiv = document.createElement("div");
-  popDiv.classList.add("popUp");
-  document.body.appendChild(popDiv);
-  const h2 = document.createElement("h2");
-  h2.innerText = "Edit Project";
-  popDiv.appendChild(h2);
-  const hr = document.createElement("hr");
-  popDiv.appendChild(hr);
-  createInputText(popDiv, "Title", title);
+function editProject(project) {
+  const popDiv = createPopUp("Edit Project");
+  createInputText(popDiv, "Title", project.title);
   const button = document.createElement("button");
   button.classList.add("sendForm");
   button.innerText = "Edit";
@@ -217,20 +226,10 @@ function editProject(title) {
 }
 
 function createTask(project) {
-  const overlay = document.createElement("div");
-  overlay.classList.add("overlay");
-  document.body.appendChild(overlay);
-  const popDiv = document.createElement("div");
-  popDiv.classList.add("popUp");
-  document.body.appendChild(popDiv);
-  const h2 = document.createElement("h2");
-  h2.innerText = "New Task";
-  popDiv.appendChild(h2);
-  const hr = document.createElement("hr");
-  popDiv.appendChild(hr);
+  const popDiv = createPopUp("New Task");
   createInputText(popDiv, "Title", "");
   createInputText(popDiv, "Description", "");
-  createInputDate(popDiv, "Date", new Date().toISOString().substring(0, 10));
+  createInputDate(popDiv, "Date", format(new Date(), "yyyy-MM-dd"));
   createSelectPriority(popDiv);
   const button = document.createElement("button");
   button.classList.add("sendForm");
@@ -238,4 +237,24 @@ function createTask(project) {
   popDiv.appendChild(button);
 }
 
-export { displayProject, createProject, editProject, createTask };
+function editTask(task) {
+  const popDiv = createPopUp("Edit Task");
+  createInputText(popDiv, "Title", task.title);
+  createInputText(popDiv, "Description", task.description);
+  createInputDate(popDiv, "Date", format(task.dueDate, "yyyy-MM-dd"));
+  createSelectPriority(popDiv);
+  const button = document.createElement("button");
+  button.classList.add("sendForm");
+  button.innerText = "Edit";
+  popDiv.appendChild(button);
+}
+
+export {
+  displayProject,
+  displayTask,
+  createProject,
+  editProject,
+  createTask,
+  editTask,
+  expandTask,
+};
