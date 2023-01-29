@@ -1,5 +1,16 @@
 import { format, isSameDay, isSameWeek } from "date-fns";
 
+// Array of projects
+
+const arrProjects = [];
+
+const svgContext = require.context("../svg", false, /\.svg$/);
+const svg = {};
+svgContext.keys().forEach((key) => {
+  const fileName = key.replace("./", "").replace(".svg", "");
+  svg[fileName] = svgContext(key);
+});
+
 // Project
 class project {
   constructor(title) {
@@ -72,4 +83,4 @@ class task {
   }
 }
 
-export { project, task };
+export { project, task, arrProjects };

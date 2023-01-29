@@ -20,8 +20,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(svg|png|jpg|gif)$/i,
+        test: /\.(png|jpg|gif)$/i,
         type: "asset/resource",
+      },
+      {
+        test: /\.svg$/i,
+        type: "asset/inline",
       },
       {
         test: /\.html$/i,

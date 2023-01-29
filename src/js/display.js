@@ -1,8 +1,14 @@
-import { format, isSameDay, isSameWeek } from "date-fns";
+import {
+  format,
+  formatDuration,
+  isSameDay,
+  isSameWeek,
+  isToday,
+} from "date-fns";
 import * as listen from "./listen.js";
 import * as manage from "./manage.js";
-import * as index from "./index.js";
 
+// Import SVG
 const svgContext = require.context("../svg", false, /\.svg$/);
 const svg = {};
 svgContext.keys().forEach((key) => {
@@ -17,6 +23,7 @@ function displayProject(project) {
   const projectAccess = document.createElement("div");
   projectAccess.classList.add("projectAccess");
   projectAccess.classList.add(project.title);
+  listen.addListener(projectAccess, displayTasksProject, project);
   projectList.appendChild(projectAccess);
   const p = document.createElement("p");
   p.textContent = project.title;
@@ -30,12 +37,6 @@ function displayProject(project) {
   deleteIcon.src = svg.delete;
   deleteIcon.classList.add("deleteIcon");
   listen.addListener(deleteIcon, deleteProject, project);
-  listen.addListener(
-    deleteIcon,
-    manage.project.deleteProject,
-    project.title,
-    index.arrProjects
-  );
   projectAccess.appendChild(deleteIcon);
 }
 
@@ -44,13 +45,26 @@ function deleteProject(project) {
   projectDiv.remove();
 }
 
-function displayALlProjects(arr) {
-  arr.foreach((element) => displayProject(element));
+function displayAllProjects(arr) {
+  arr.forEach((element) => displayProject(element));
 }
 
-function deleteAllProjects() {
-  const projectList = document.querySelector("projectLists");
-  projectList.innerHTML = "";
+function displayNewProjectButton() {
+  const leftBar = document.querySelector(".leftBar");
+  const projectAccess = document.createElement("div");
+  projectAccess.classList.add("projectAccess");
+  leftBar.appendChild(projectAccess);
+  const newProjectLeft = document.createElement("div");
+  newProjectLeft.classList.add("newProjectLeft");
+  projectAccess.appendChild(newProjectLeft);
+  const newIcon = document.createElement("img");
+  newIcon.classList.add("newIcon");
+  newIcon.src = svg.new;
+  newProjectLeft.appendChild(newIcon);
+  const p = document.createElement("p");
+  p.innerText = "New Project";
+  newProjectLeft.appendChild(p);
+  listen.addListener(projectAccess, createProject);
 }
 
 // Tasks
@@ -67,7 +81,6 @@ function displayTask(task) {
   projectCard.appendChild(mainRow);
   const flag = document.createElement("img");
   flag.classList.add("flag");
-  console.log(svg);
   if (task.priority === "low") flag.src = svg.greenFlagIcon;
   else if (task.priority === "medium") flag.src = svg.yellowFlagIcon;
   else flag.src = svg.redFlagIcon;
@@ -77,30 +90,39 @@ function displayTask(task) {
   mainRow.appendChild(title);
   const date = document.createElement("div");
   date.classList.add("date");
-  date.innerText = task.dueDate;
+  date.innerText = format(task.dueDate, "dd-mm-yyyy");
   mainRow.appendChild(date);
   const arrow = document.createElement("img");
   arrow.src = svg.arrow;
   arrow.classList.add("arrow");
+  listen.addListenerOnce(arrow, expandTask, task);
   mainRow.appendChild(arrow);
 }
 
+function deleteAllTasks() {
+  const divs = document.querySelectorAll(".projectCard");
+  divs.forEach((element) => element.remove());
+}
+
 function displayTasksProject(project) {
-  project.tasks.forach((element) => displayTask(element));
+  deleteAllTasks();
+  project.tasks.forEach((element) => displayTask(element));
 }
 
 function displayTasksToday(arr) {
-  arr.foreach((element) =>
-    element.foreach((e) => {
-      if (isSameDay(e.date, new Date())) displayTask(e);
-    })
-  );
+  deleteAllTasks();
+  arr.forEach((element) => {
+    element.tasks.forEach((e) => {
+      if (isSameDay(e.dueDate, new Date())) displayTask(e);
+    });
+  });
 }
 
-function displayTasksWeek(arr) {
-  arr.foreach((element) =>
-    element.foreach((e) => {
-      if (isSameWeek(e.date, new Date())) displayTask(e);
+function displayTasksThisWeek(arr) {
+  deleteAllTasks();
+  arr.forEach((element) =>
+    element.tasks.forEach((e) => {
+      if (isSameWeek(e.dueDate, new Date())) displayTask(e);
     })
   );
 }
@@ -108,7 +130,6 @@ function displayTasksWeek(arr) {
 function expandTask(task) {
   const projectCard = document.querySelector(`.projectCard.${task.title}`);
   const extendedRow = document.createElement("div");
-  console.log(projectCard);
   extendedRow.classList.add("projectRow");
   extendedRow.classList.add("extendedRow");
   projectCard.appendChild(extendedRow);
@@ -124,15 +145,20 @@ function expandTask(task) {
   deleteIcon.classList.add("deleteIcon");
   deleteIcon.src = svg.delete;
   extendedRow.appendChild(deleteIcon);
-  const moveArrow = projectCard.querySelector(".arrow");
+  const moveArrow = projectCard.querySelector("img.arrow");
+  listen.addListenerOnce(moveArrow, contractTask, task);
   moveArrow.classList.add("down");
 }
 
 function contractTask(task) {
-  const projectCard = document.querySelector(`.projectCard ${task.title}`);
-  const extendedRow = projectCard.querySelector(".extendedRow");
+  console.log(task);
+  const thisProjectCard = document.querySelector(`.projectCard.${task.title}`);
+  console.log(thisProjectCard);
+  const extendedRow = thisProjectCard.querySelector(".extendedRow");
+  console.log(extendedRow);
   extendedRow.remove();
-  const moveArrow = projectCard.querySelector(".arrow");
+  const moveArrow = thisProjectCard.querySelector(".arrow");
+  listen.addListenerOnce(moveArrow, expandTask, task);
   moveArrow.classList.remove("down");
 }
 
@@ -141,6 +167,7 @@ function contractTask(task) {
 function createPopUp(title) {
   const overlay = document.createElement("div");
   overlay.classList.add("overlay");
+  listen.addListener(overlay, closePopUp);
   document.body.appendChild(overlay);
   const popDiv = document.createElement("div");
   popDiv.classList.add("popUp");
@@ -249,12 +276,24 @@ function editTask(task) {
   popDiv.appendChild(button);
 }
 
+function closePopUp() {
+  const popUp = document.querySelector(".popUp");
+  const overlay = document.querySelector(".overlay");
+  popUp.remove();
+  overlay.remove();
+}
+
 export {
   displayProject,
+  displayAllProjects,
+  displayNewProjectButton,
   displayTask,
+  displayTasksToday,
+  displayTasksThisWeek,
   createProject,
   editProject,
   createTask,
   editTask,
   expandTask,
+  svg,
 };

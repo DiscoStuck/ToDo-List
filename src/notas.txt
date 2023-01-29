@@ -1,3 +1,1 @@
-Jugando con los listeners.
-
-Intentando consiguir que al pulsar en delete, no solo se borre en el display sino en el array. 
+Problems with arrow listener

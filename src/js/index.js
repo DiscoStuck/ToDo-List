@@ -2,23 +2,43 @@ import "/src/reset.css";
 import "/src/styles.css";
 import * as manage from "./manage.js";
 import * as display from "./display.js";
+import * as listen from "./listen.js";
 import { format, isSameDay, isSameWeek } from "date-fns";
+import { cursorListeners } from "./listen.js";
 
-const arrProjects = [];
-
-arrProjects[0] = new manage.project("Prueba");
-arrProjects[0].tasks[0] = new manage.task(
+manage.arrProjects[0] = new manage.project("Project1");
+manage.arrProjects[1] = new manage.project("Project2");
+manage.arrProjects[0].tasks[0] = new manage.task(
   "titulo",
   "descripcion",
-  format(new Date(), "yyyy-MM-dd"),
+  new Date(),
+  "medium"
+);
+manage.arrProjects[0].tasks[1] = new manage.task(
+  "titulo",
+  "descripcion",
+  new Date(),
   "medium"
 );
 
-display.displayProject(arrProjects[0]);
+// Initial Listeners
 
-console.log(arrProjects[0].tasks[0].title);
+(function initialListeners() {
+  const tasksToday = document.querySelector(".quickAccess.today");
+  console.log(tasksToday);
+  listen.addListener(tasksToday, display.displayTasksToday, manage.arrProjects);
+  const tasksThisWeek = document.querySelector(".quickAccess.thisWeek");
+  listen.addListener(
+    tasksThisWeek,
+    display.displayTasksThisWeek,
+    manage.arrProjects
+  );
+})();
 
-display.displayTask(arrProjects[0].tasks[0]);
-display.expandTask(arrProjects[0].tasks[0]);
+display.displayAllProjects(manage.arrProjects);
 
-export { arrProjects };
+display.displayTasksToday(manage.arrProjects);
+
+display.displayNewProjectButton();
+
+cursorListeners();
