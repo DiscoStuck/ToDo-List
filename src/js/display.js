@@ -22,7 +22,7 @@ function displayProject(project) {
   const projectList = document.querySelector(".projectList");
   const projectAccess = document.createElement("div");
   projectAccess.classList.add("projectAccess");
-  projectAccess.classList.add(project.title);
+  projectAccess.id = project.ID;
   listen.addListener(projectAccess, displayTasksProject, project);
   projectList.appendChild(projectAccess);
   const p = document.createElement("p");
@@ -41,8 +41,10 @@ function displayProject(project) {
 }
 
 function deleteProject(project) {
-  const projectDiv = document.querySelector(`.${project.title}`);
+  const projectDiv = document.querySelector(`#${project.ID}`);
   projectDiv.remove();
+  const projectIndex = manage.arrProjects.findIndex((x) => x.id === project.ID);
+  manage.arrProjects.splice(projectIndex, 1);
 }
 
 function displayAllProjects(arr) {
@@ -73,7 +75,7 @@ function displayTask(task) {
   const rightBar = document.querySelector(".rightBar");
   const projectCard = document.createElement("div");
   projectCard.classList.add(`projectCard`);
-  projectCard.classList.add(task.title);
+  projectCard.id = task.ID;
   rightBar.appendChild(projectCard);
   const mainRow = document.createElement("div");
   mainRow.classList.add("projectRow");
@@ -90,7 +92,7 @@ function displayTask(task) {
   mainRow.appendChild(title);
   const date = document.createElement("div");
   date.classList.add("date");
-  date.innerText = format(task.dueDate, "dd-mm-yyyy");
+  date.innerText = format(task.dueDate, "dd-MM-yyyy");
   mainRow.appendChild(date);
   const arrow = document.createElement("img");
   arrow.src = svg.arrow;
@@ -128,7 +130,7 @@ function displayTasksThisWeek(arr) {
 }
 
 function expandTask(task) {
-  const projectCard = document.querySelector(`.projectCard.${task.title}`);
+  const projectCard = document.querySelector(`#${task.ID}`);
   const extendedRow = document.createElement("div");
   extendedRow.classList.add("projectRow");
   extendedRow.classList.add("extendedRow");
@@ -140,10 +142,12 @@ function expandTask(task) {
   const editIcon = document.createElement("img");
   editIcon.classList.add("editIcon");
   editIcon.src = svg.edit;
+  listen.addListener(editIcon, editTask, task);
   extendedRow.appendChild(editIcon);
   const deleteIcon = document.createElement("img");
   deleteIcon.classList.add("deleteIcon");
   deleteIcon.src = svg.delete;
+  listen.addListener(deleteIcon, deleteTask, task);
   extendedRow.appendChild(deleteIcon);
   const moveArrow = projectCard.querySelector("img.arrow");
   listen.addListenerOnce(moveArrow, contractTask, task);
@@ -151,8 +155,7 @@ function expandTask(task) {
 }
 
 function contractTask(task) {
-  console.log(task);
-  const thisProjectCard = document.querySelector(`.projectCard.${task.title}`);
+  const thisProjectCard = document.querySelector(`#${task.ID}`);
   console.log(thisProjectCard);
   const extendedRow = thisProjectCard.querySelector(".extendedRow");
   console.log(extendedRow);
@@ -160,6 +163,15 @@ function contractTask(task) {
   const moveArrow = thisProjectCard.querySelector(".arrow");
   listen.addListenerOnce(moveArrow, expandTask, task);
   moveArrow.classList.remove("down");
+}
+
+function deleteTask(task) {
+  const div = document.querySelector(`#${task.ID}`);
+  div.remove();
+  console.log(task.project);
+  const arr = task.project.tasks;
+  const taskIndex = arr.indexOf(task);
+  arr.splice(taskIndex, 1);
 }
 
 // PopUps
@@ -192,6 +204,7 @@ function createInputText(div, name, fill) {
   input.name = name;
   input.value = fill;
   inputDiv.appendChild(input);
+  return input;
 }
 
 function createInputDate(div, name, date) {
@@ -236,11 +249,18 @@ function createSelectPriority(div) {
 
 function createProject() {
   const popDiv = createPopUp("New Project");
-  createInputText(popDiv, "Title", "");
+  const input = createInputText(popDiv, "Title", "");
   const button = document.createElement("button");
   button.classList.add("sendForm");
   button.innerText = "Create Project";
   popDiv.appendChild(button);
+  const addProject = (arr) => {
+    arr.push(new manage.project(input.value));
+    displayProject(arr[arr.length - 1]);
+    console.log(manage.arrProjects);
+  };
+  listen.addListener(button, addProject, manage.arrProjects);
+  listen.addListener(button, closePopUp);
 }
 
 function editProject(project) {

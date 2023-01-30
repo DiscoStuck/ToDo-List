@@ -3200,30 +3200,21 @@ function toDate(argument) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addListener": () => (/* binding */ addListener),
-/* harmony export */   "addListenerOnce": () => (/* binding */ addListenerOnce),
-/* harmony export */   "cursorListeners": () => (/* binding */ cursorListeners)
+/* harmony export */   "addListenerOnce": () => (/* binding */ addListenerOnce)
 /* harmony export */ });
 function addListener(button, action, parameter1, parameter2) {
-  button.checkListener = true;
+  button.style.cursor = "pointer";
   button.addEventListener("click", function () {
     action(parameter1, parameter2);
   });
 }
 
 function addListenerOnce(button, action, parameter1, parameter2) {
+  button.style.cursor = "pointer";
   button.checkListener = true;
   button.addEventListener("click", function listenerFunction() {
     button.removeEventListener("click", listenerFunction);
     action(parameter1, parameter2);
-  });
-}
-
-// Cursor
-function cursorListeners() {
-  const elements = document.querySelectorAll("button, img, div");
-
-  elements.forEach((element) => {
-    if (element.checkListener) element.style.cursor = "pointer";
   });
 }
 
@@ -3257,35 +3248,37 @@ svgContext.keys().forEach((key) => {
   svg[fileName] = svgContext(key);
 });
 
+// Random ID
+
+function generateRandomID() {
+  var result = "";
+  var characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var charactersLength = characters.length;
+  for (var i = 0; i < 8; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+
 // Project
 class project {
   constructor(title) {
     this.title = title;
     this.tasks = [];
-  }
-
-  static addProject(title, arr) {
-    arr.push(new project(title));
-  }
-
-  static editProject(newTitle, oldTitle, arr) {
-    const index = arr.findIndex((element) => element.title === oldTitle);
-    arr[index].title = newTitle;
-  }
-
-  static deleteProject(oldTitle, arr) {
-    const index = arr.findIndex((element) => element.title === oldTitle);
-    arr.splice(index, 1);
+    this.ID = generateRandomID();
   }
 }
 
 // Task
 class task {
-  constructor(title, description, dueDate, priority) {
+  constructor(title, description, dueDate, priority, inProject) {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;
+    this.ID = generateRandomID();
+    this.project = inProject;
   }
 
   static addTask(title, description, dueDate, priority, arr, projectTitle) {
@@ -3316,16 +3309,6 @@ class task {
     arr[projectIndex].tasks[taskIndex].description = description;
     arr[projectIndex].tasks[taskIndex].dueDate = dueDate;
     arr[projectIndex].tasks[taskIndex].priority = priority;
-  }
-
-  static deleteTask(oldTItle, arr, projectTitle) {
-    const projectIndex = arr.findIndex(
-      (element) => element.title === projectTitle
-    );
-    const taskIndex = arr[projectIndex].tasks.findIndex(
-      (element) => element.title === oldTitle
-    );
-    arr[projectIndex].tasks.splice(taskIndex, 1);
   }
 }
 
@@ -3550,7 +3533,7 @@ function displayProject(project) {
   const projectList = document.querySelector(".projectList");
   const projectAccess = document.createElement("div");
   projectAccess.classList.add("projectAccess");
-  projectAccess.classList.add(project.title);
+  projectAccess.id = project.ID;
   _listen_js__WEBPACK_IMPORTED_MODULE_0__.addListener(projectAccess, displayTasksProject, project);
   projectList.appendChild(projectAccess);
   const p = document.createElement("p");
@@ -3569,8 +3552,10 @@ function displayProject(project) {
 }
 
 function deleteProject(project) {
-  const projectDiv = document.querySelector(`.${project.title}`);
+  const projectDiv = document.querySelector(`#${project.ID}`);
   projectDiv.remove();
+  const projectIndex = _manage_js__WEBPACK_IMPORTED_MODULE_1__.arrProjects.findIndex((x) => x.id === project.ID);
+  _manage_js__WEBPACK_IMPORTED_MODULE_1__.arrProjects.splice(projectIndex, 1);
 }
 
 function displayAllProjects(arr) {
@@ -3601,7 +3586,7 @@ function displayTask(task) {
   const rightBar = document.querySelector(".rightBar");
   const projectCard = document.createElement("div");
   projectCard.classList.add(`projectCard`);
-  projectCard.classList.add(task.title);
+  projectCard.id = task.ID;
   rightBar.appendChild(projectCard);
   const mainRow = document.createElement("div");
   mainRow.classList.add("projectRow");
@@ -3618,7 +3603,7 @@ function displayTask(task) {
   mainRow.appendChild(title);
   const date = document.createElement("div");
   date.classList.add("date");
-  date.innerText = (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(task.dueDate, "dd-mm-yyyy");
+  date.innerText = (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(task.dueDate, "dd-MM-yyyy");
   mainRow.appendChild(date);
   const arrow = document.createElement("img");
   arrow.src = svg.arrow;
@@ -3656,7 +3641,7 @@ function displayTasksThisWeek(arr) {
 }
 
 function expandTask(task) {
-  const projectCard = document.querySelector(`.projectCard.${task.title}`);
+  const projectCard = document.querySelector(`#${task.ID}`);
   const extendedRow = document.createElement("div");
   extendedRow.classList.add("projectRow");
   extendedRow.classList.add("extendedRow");
@@ -3668,10 +3653,12 @@ function expandTask(task) {
   const editIcon = document.createElement("img");
   editIcon.classList.add("editIcon");
   editIcon.src = svg.edit;
+  _listen_js__WEBPACK_IMPORTED_MODULE_0__.addListener(editIcon, editTask, task);
   extendedRow.appendChild(editIcon);
   const deleteIcon = document.createElement("img");
   deleteIcon.classList.add("deleteIcon");
   deleteIcon.src = svg.delete;
+  _listen_js__WEBPACK_IMPORTED_MODULE_0__.addListener(deleteIcon, deleteTask, task);
   extendedRow.appendChild(deleteIcon);
   const moveArrow = projectCard.querySelector("img.arrow");
   _listen_js__WEBPACK_IMPORTED_MODULE_0__.addListenerOnce(moveArrow, contractTask, task);
@@ -3679,8 +3666,7 @@ function expandTask(task) {
 }
 
 function contractTask(task) {
-  console.log(task);
-  const thisProjectCard = document.querySelector(`.projectCard.${task.title}`);
+  const thisProjectCard = document.querySelector(`#${task.ID}`);
   console.log(thisProjectCard);
   const extendedRow = thisProjectCard.querySelector(".extendedRow");
   console.log(extendedRow);
@@ -3688,6 +3674,15 @@ function contractTask(task) {
   const moveArrow = thisProjectCard.querySelector(".arrow");
   _listen_js__WEBPACK_IMPORTED_MODULE_0__.addListenerOnce(moveArrow, expandTask, task);
   moveArrow.classList.remove("down");
+}
+
+function deleteTask(task) {
+  const div = document.querySelector(`#${task.ID}`);
+  div.remove();
+  console.log(task.project);
+  const arr = task.project.tasks;
+  const taskIndex = arr.indexOf(task);
+  arr.splice(taskIndex, 1);
 }
 
 // PopUps
@@ -3720,6 +3715,7 @@ function createInputText(div, name, fill) {
   input.name = name;
   input.value = fill;
   inputDiv.appendChild(input);
+  return input;
 }
 
 function createInputDate(div, name, date) {
@@ -3764,11 +3760,18 @@ function createSelectPriority(div) {
 
 function createProject() {
   const popDiv = createPopUp("New Project");
-  createInputText(popDiv, "Title", "");
+  const input = createInputText(popDiv, "Title", "");
   const button = document.createElement("button");
   button.classList.add("sendForm");
   button.innerText = "Create Project";
   popDiv.appendChild(button);
+  const addProject = (arr) => {
+    arr.push(new _manage_js__WEBPACK_IMPORTED_MODULE_1__.project(input.value));
+    displayProject(arr[arr.length - 1]);
+    console.log(_manage_js__WEBPACK_IMPORTED_MODULE_1__.arrProjects);
+  };
+  _listen_js__WEBPACK_IMPORTED_MODULE_0__.addListener(button, addProject, _manage_js__WEBPACK_IMPORTED_MODULE_1__.arrProjects);
+  _listen_js__WEBPACK_IMPORTED_MODULE_0__.addListener(button, closePopUp);
 }
 
 function editProject(project) {

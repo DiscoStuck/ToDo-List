@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* Colors */\n:root{\n    --lightGrey1: #f8f8f8;\n    --lightGrey2: #F1F1F1;\n    --lightGrey3: #E7E7E7;\n    --darkGrey1: #343434;\n}\n\n\nbody{\n    min-height: 100vh;\n    display: flex;\n    flex-direction: column;\n    font-family: Tahoma, sans-serif;\n    color: var(--darkGrey1);\n}\n\n.content {\n    height: 100%;\n    display: flex;\n    flex-grow: 1;\n    align-items: stretch;\n}\n\n/* Header */\n.header{\n    min-width: 1000px;\n    height: 100px;\n    background-color: var(--lightGrey3);\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n\n.header h2{\n    font-size: 40px;\n    margin-left: 50px;\n}\n\n\n\n/* Left bar */\n.leftBar{\n    min-width: 300px;\n    width: 22%;\n    background-color: var(--lightGrey2);\n    padding: 30px;\n}\n\n.quickAccessMenu {\n    width: 100%;\n    margin-top: 20px;\n}\n\n.quickAccess, .projectAccess{\n    box-sizing: border-box;\n    height: 60px;\n    width: 100%;\n    border-radius: 5px;\n    margin-bottom: 30px;\n    display: flex;\n    padding: 0 25px 0 25px;\n}\n\n.leftBar h3{\n    font-size: 45px;\n    margin-bottom: 30px;\n    margin-top: 40px;\n}\n\n.quickAccess{\n    font-size: 26px;\n    background-color: var(--lightGrey3);\n        flex-direction: column;\n            justify-content: center;\n}\n\n\n.projectAccess {\n    background-color: var(--lightGrey3);\n    font-size: 18px;\n    align-items: center;\n    justify-content: space-between;\n    gap: 15px;\n}\n\n.projectAccess p{\n    flex-grow: 1;\n}\n\n.newProjectLeft{\n    display: flex;\n    align-items: center;\n    gap: 10px;\n}\n\n.newIcon{\n    width: 30px;\n    height: 30px;\n}\n\n/* Right bar */\n.rightBar{\n    min-width: 700px;\n    width: 78%;\n    background-color: var(--lightGrey1);\n    display: flex;\n    flex-direction: column;\n    padding: 50px;\n    gap: 30px;\n}\n\n.projectCard{\n    min-height: 60px;\n    width: 100%;\n    background-color: var(--lightGrey3);\n    border-radius: 5px;\n}\n\n.projectRow{\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 20px;\n    gap: 20px;\n}\n\n.mainRow{\n    min-height:60px;\n}\n\n.flag{\n    width: 30px;\n    height: 30px;\n    flex-grow: 0;\n    flex: 0 0 auto;\n}\n\n.arrow {\n    width: 20px;\n    height: 20px;\n    rotate: 180deg;\n    flex-grow: 0;\n    flex: 0 0 auto;\n}\n\n.projectRow h3{\n    flex: 1 1 auto;\n    font-size: 18px;\n}\n\n.extendedRow{\n    padding: 5px 15px 15px 20px;\n    gap: 30px;\n    min-height: 45px;\n}\n\n.description{\n    margin-right: 20px;\n    flex-basis: 100%;\n}\n.date{\n    flex-grow: 0 1 auto;\n}\n\n.down{\n    rotate: 90deg;\n}\n\n.editIcon{\n    width: 22px;\n    height: 22px;\n    fill: black;\n    stroke: black;\n    flex-basis: auto;\n}\n\n.deleteIcon{\n    width: 30px;\n    height: 30px;\n    flex-basis: auto;\n}\n\n/* Pop-ups */\n.overlay{\n    position: fixed;\n    width: 0;\n    height: 0;\n    background-color: rgba(255, 255, 255, 0.7);\n    z-index: 1;\n    width: 100vw;\n        height: 100vh;\n}\n\n\n.popUp{\n    box-sizing: border-box;\n    width: 400px;\n    min-height: 400px;\n    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.4);\n    position: fixed;\n    transform: translate(-50%, -50%) scale(1);\n    top: 50%;\n    left: 50%;\n    background-color: var(--lightGrey1);\n    border-radius: 15px;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: stretch;\n    z-index: 2;\n    padding: 50px 70px;\n    gap: 15px;\n}\n\n\n.popUp h2{\n    text-align: center;\n    font-size: 45px;\n}\n\ninput, input:focus-visible, input:focus, select, option{\n    height: 30px;\n    border-radius: 6px;\n    border-width: 2px;\n    border-color: rgb(148, 148, 148);\n    background-color: white;\n    border-style: solid;\n    outline: none;\n    padding-left: 5px;\n}\n\n.inputDiv{\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n}\n\nlabel{\n    font-size: 17px;\n}\n\nbutton{\n    height: 35px;\n    font-size: 17px;\n    margin: 0 30px;\n    border-radius: 7px;\n        border-style: solid;\n            outline: none;\n            background-color: var(--lightGrey3);\n            margin-top: 15px;\n}\n\n.popUp hr{\n    width: 100%;\n    height: 1px;\n    background-color: var(--darkGrey1)\n\n}", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"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","sourcesContent":["/* Colors */\n:root{\n    --lightGrey1: #f8f8f8;\n    --lightGrey2: #F1F1F1;\n    --lightGrey3: #E7E7E7;\n    --darkGrey1: #343434;\n}\n\n\nbody{\n    min-height: 100vh;\n    display: flex;\n    flex-direction: column;\n    font-family: Tahoma, sans-serif;\n    color: var(--darkGrey1);\n}\n\n.content {\n    height: 100%;\n    display: flex;\n    flex-grow: 1;\n    align-items: stretch;\n}\n\n/* Header */\n.header{\n    min-width: 1000px;\n    height: 100px;\n    background-color: var(--lightGrey3);\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n\n.header h2{\n    font-size: 40px;\n    margin-left: 50px;\n}\n\n\n\n/* Left bar */\n.leftBar{\n    min-width: 300px;\n    width: 22%;\n    background-color: var(--lightGrey2);\n    padding: 30px;\n}\n\n.quickAccessMenu {\n    width: 100%;\n    margin-top: 20px;\n}\n\n.quickAccess, .projectAccess{\n    box-sizing: border-box;\n    height: 60px;\n    width: 100%;\n    border-radius: 5px;\n    margin-bottom: 30px;\n    display: flex;\n    padding: 0 25px 0 25px;\n}\n\n.leftBar h3{\n    font-size: 45px;\n    margin-bottom: 30px;\n    margin-top: 40px;\n}\n\n.quickAccess{\n    font-size: 26px;\n    background-color: var(--lightGrey3);\n        flex-direction: column;\n            justify-content: center;\n}\n\n\n.projectAccess {\n    background-color: var(--lightGrey3);\n    font-size: 18px;\n    align-items: center;\n    justify-content: space-between;\n    gap: 15px;\n}\n\n.projectAccess p{\n    flex-grow: 1;\n}\n\n.newProjectLeft{\n    display: flex;\n    align-items: center;\n    gap: 10px;\n}\n\n.newIcon{\n    width: 30px;\n    height: 30px;\n}\n\n/* Right bar */\n.rightBar{\n    min-width: 700px;\n    width: 78%;\n    background-color: var(--lightGrey1);\n    display: flex;\n    flex-direction: column;\n    padding: 50px;\n    gap: 30px;\n}\n\n.projectCard{\n    min-height: 60px;\n    width: 100%;\n    background-color: var(--lightGrey3);\n    border-radius: 5px;\n}\n\n.projectRow{\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 20px;\n    gap: 20px;\n}\n\n.mainRow{\n    min-height:60px;\n}\n\n.flag{\n    width: 30px;\n    height: 30px;\n    flex-grow: 0;\n    flex: 0 0 auto;\n}\n\n.arrow {\n    width: 20px;\n    height: 20px;\n    rotate: 180deg;\n    flex-grow: 0;\n    flex: 0 0 auto;\n}\n\n.projectRow h3{\n    flex: 1 1 auto;\n    font-size: 18px;\n}\n\n.extendedRow{\n    padding: 5px 15px 15px 20px;\n    gap: 30px;\n    min-height: 45px;\n}\n\n.description{\n    margin-right: 20px;\n    flex-basis: 100%;\n}\n.date{\n    flex-grow: 0 1 auto;\n}\n\n.down{\n    rotate: 90deg;\n}\n\n.editIcon{\n    width: 22px;\n    height: 22px;\n    fill: black;\n    stroke: black;\n    flex-basis: auto;\n}\n\n.deleteIcon{\n    width: 30px;\n    height: 30px;\n    flex-basis: auto;\n}\n\n/* Pop-ups */\n.overlay{\n    position: fixed;\n    width: 0;\n    height: 0;\n    background-color: rgba(255, 255, 255, 0.7);\n    z-index: 1;\n    width: 100vw;\n        height: 100vh;\n}\n\n\n.popUp{\n    box-sizing: border-box;\n    width: 400px;\n    min-height: 400px;\n    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.4);\n    position: fixed;\n    transform: translate(-50%, -50%) scale(1);\n    top: 50%;\n    left: 50%;\n    background-color: var(--lightGrey1);\n    border-radius: 15px;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: stretch;\n    z-index: 2;\n    padding: 50px 70px;\n    gap: 15px;\n}\n\n\n.popUp h2{\n    text-align: center;\n    font-size: 45px;\n}\n\ninput, input:focus-visible, input:focus, select, option{\n    height: 30px;\n    border-radius: 6px;\n    border-width: 2px;\n    border-color: rgb(148, 148, 148);\n    background-color: white;\n    border-style: solid;\n    outline: none;\n    padding-left: 5px;\n}\n\n.inputDiv{\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n}\n\nlabel{\n    font-size: 17px;\n}\n\nbutton{\n    height: 35px;\n    font-size: 17px;\n    margin: 0 30px;\n    border-radius: 7px;\n        border-style: solid;\n            outline: none;\n            background-color: var(--lightGrey3);\n            margin-top: 15px;\n}\n\n.popUp hr{\n    width: 100%;\n    height: 1px;\n    background-color: var(--darkGrey1)\n\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* Colors */\n:root{\n    --lightGrey1: #f8f8f8;\n    --lightGrey2: #F1F1F1;\n    --lightGrey3: #E7E7E7;\n    --darkGrey1: #343434;\n}\n\n\nbody{\n    min-height: 100vh;\n    display: flex;\n    flex-direction: column;\n    font-family: Tahoma, sans-serif;\n    color: var(--darkGrey1);\n}\n\n.content {\n    height: 100%;\n    display: flex;\n    flex-grow: 1;\n    align-items: stretch;\n}\n\n/* Header */\n.header{\n    min-width: 1000px;\n    height: 100px;\n    background-color: var(--lightGrey3);\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n\n.header h2{\n    font-size: 40px;\n    margin-left: 50px;\n}\n\n\n\n/* Left bar */\n.leftBar{\n    min-width: 300px;\n    width: 22%;\n    background-color: var(--lightGrey2);\n    padding: 30px;\n}\n\n.quickAccessMenu {\n    width: 100%;\n    margin-top: 20px;\n}\n\n.quickAccess, .projectAccess{\n    box-sizing: border-box;\n    height: 60px;\n    width: 100%;\n    border-radius: 5px;\n    margin-bottom: 30px;\n    display: flex;\n    padding: 0 25px 0 25px;\n}\n\n.leftBar h3{\n    font-size: 45px;\n    margin-bottom: 30px;\n    margin-top: 40px;\n}\n\n.quickAccess{\n    font-size: 26px;\n    background-color: var(--lightGrey3);\n        flex-direction: column;\n            justify-content: center;\n}\n\n\n.projectAccess {\n    background-color: var(--lightGrey3);\n    font-size: 18px;\n    align-items: center;\n    justify-content: space-between;\n    gap: 15px;\n}\n\n.projectAccess p{\n    flex-grow: 1;\n}\n\n.newProjectLeft{\n    display: flex;\n    align-items: center;\n    gap: 10px;\n}\n\n.newIcon{\n    width: 30px;\n    height: 30px;\n}\n\n/* Right bar */\n.rightBar{\n    min-width: 700px;\n    width: 78%;\n    background-color: var(--lightGrey1);\n    display: flex;\n    flex-direction: column;\n    padding: 50px;\n    gap: 30px;\n}\n\n.projectCard{\n    min-height: 60px;\n    width: 100%;\n    background-color: var(--lightGrey3);\n    border-radius: 5px;\n}\n\n.projectRow{\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 20px;\n    gap: 20px;\n}\n\n.mainRow{\n    min-height:60px;\n}\n\n.flag{\n    width: 30px;\n    height: 30px;\n    flex-grow: 0;\n    flex: 0 0 auto;\n}\n\n.arrow {\n    width: 20px;\n    height: 20px;\n    rotate: 180deg;\n    flex-grow: 0;\n    flex: 0 0 auto;\n}\n\n.projectRow h3{\n    flex: 1 1 auto;\n    font-size: 18px;\n}\n\n.extendedRow{\n    padding: 5px 10px 10px 20px;\n    gap: 30px;\n    min-height: 45px;\n    background-color: var(--lightGrey2);\n    border-radius: 0 0 5px 5px;\n}\n\n.description{\n    margin-right: 20px;\n    flex-basis: 100%;\n}\n.date{\n    flex-grow: 0 1 auto;\n}\n\n.down{\n    rotate: 90deg;\n}\n\n.editIcon{\n    width: 22px;\n    height: 22px;\n    fill: black;\n    stroke: black;\n    flex-basis: auto;\n}\n\n.deleteIcon{\n    width: 30px;\n    height: 30px;\n    flex-basis: auto;\n}\n\n/* Pop-ups */\n.overlay{\n    position: fixed;\n    width: 0;\n    height: 0;\n    background-color: rgba(255, 255, 255, 0.7);\n    z-index: 1;\n    width: 100vw;\n        height: 100vh;\n}\n\n\n.popUp{\n    box-sizing: border-box;\n    width: 400px;\n    min-height: 400px;\n    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.4);\n    position: fixed;\n    transform: translate(-50%, -50%) scale(1);\n    top: 50%;\n    left: 50%;\n    background-color: var(--lightGrey1);\n    border-radius: 15px;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: stretch;\n    z-index: 2;\n    padding: 50px 70px;\n    gap: 15px;\n}\n\n\n.popUp h2{\n    text-align: center;\n    font-size: 45px;\n}\n\ninput, input:focus-visible, input:focus, select, option{\n    height: 30px;\n    border-radius: 6px;\n    border-width: 2px;\n    border-color: rgb(148, 148, 148);\n    background-color: white;\n    border-style: solid;\n    outline: none;\n    padding-left: 5px;\n}\n\n.inputDiv{\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n}\n\nlabel{\n    font-size: 17px;\n}\n\nbutton{\n    height: 35px;\n    font-size: 17px;\n    margin: 0 30px;\n    border-radius: 7px;\n        border-style: solid;\n            outline: none;\n            background-color: var(--lightGrey3);\n            margin-top: 15px;\n}\n\n.popUp hr{\n    width: 100%;\n    height: 1px;\n    background-color: var(--darkGrey1)\n\n}", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"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","sourcesContent":["/* Colors */\n:root{\n    --lightGrey1: #f8f8f8;\n    --lightGrey2: #F1F1F1;\n    --lightGrey3: #E7E7E7;\n    --darkGrey1: #343434;\n}\n\n\nbody{\n    min-height: 100vh;\n    display: flex;\n    flex-direction: column;\n    font-family: Tahoma, sans-serif;\n    color: var(--darkGrey1);\n}\n\n.content {\n    height: 100%;\n    display: flex;\n    flex-grow: 1;\n    align-items: stretch;\n}\n\n/* Header */\n.header{\n    min-width: 1000px;\n    height: 100px;\n    background-color: var(--lightGrey3);\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n\n.header h2{\n    font-size: 40px;\n    margin-left: 50px;\n}\n\n\n\n/* Left bar */\n.leftBar{\n    min-width: 300px;\n    width: 22%;\n    background-color: var(--lightGrey2);\n    padding: 30px;\n}\n\n.quickAccessMenu {\n    width: 100%;\n    margin-top: 20px;\n}\n\n.quickAccess, .projectAccess{\n    box-sizing: border-box;\n    height: 60px;\n    width: 100%;\n    border-radius: 5px;\n    margin-bottom: 30px;\n    display: flex;\n    padding: 0 25px 0 25px;\n}\n\n.leftBar h3{\n    font-size: 45px;\n    margin-bottom: 30px;\n    margin-top: 40px;\n}\n\n.quickAccess{\n    font-size: 26px;\n    background-color: var(--lightGrey3);\n        flex-direction: column;\n            justify-content: center;\n}\n\n\n.projectAccess {\n    background-color: var(--lightGrey3);\n    font-size: 18px;\n    align-items: center;\n    justify-content: space-between;\n    gap: 15px;\n}\n\n.projectAccess p{\n    flex-grow: 1;\n}\n\n.newProjectLeft{\n    display: flex;\n    align-items: center;\n    gap: 10px;\n}\n\n.newIcon{\n    width: 30px;\n    height: 30px;\n}\n\n/* Right bar */\n.rightBar{\n    min-width: 700px;\n    width: 78%;\n    background-color: var(--lightGrey1);\n    display: flex;\n    flex-direction: column;\n    padding: 50px;\n    gap: 30px;\n}\n\n.projectCard{\n    min-height: 60px;\n    width: 100%;\n    background-color: var(--lightGrey3);\n    border-radius: 5px;\n}\n\n.projectRow{\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 20px;\n    gap: 20px;\n}\n\n.mainRow{\n    min-height:60px;\n}\n\n.flag{\n    width: 30px;\n    height: 30px;\n    flex-grow: 0;\n    flex: 0 0 auto;\n}\n\n.arrow {\n    width: 20px;\n    height: 20px;\n    rotate: 180deg;\n    flex-grow: 0;\n    flex: 0 0 auto;\n}\n\n.projectRow h3{\n    flex: 1 1 auto;\n    font-size: 18px;\n}\n\n.extendedRow{\n    padding: 5px 10px 10px 20px;\n    gap: 30px;\n    min-height: 45px;\n    background-color: var(--lightGrey2);\n    border-radius: 0 0 5px 5px;\n}\n\n.description{\n    margin-right: 20px;\n    flex-basis: 100%;\n}\n.date{\n    flex-grow: 0 1 auto;\n}\n\n.down{\n    rotate: 90deg;\n}\n\n.editIcon{\n    width: 22px;\n    height: 22px;\n    fill: black;\n    stroke: black;\n    flex-basis: auto;\n}\n\n.deleteIcon{\n    width: 30px;\n    height: 30px;\n    flex-basis: auto;\n}\n\n/* Pop-ups */\n.overlay{\n    position: fixed;\n    width: 0;\n    height: 0;\n    background-color: rgba(255, 255, 255, 0.7);\n    z-index: 1;\n    width: 100vw;\n        height: 100vh;\n}\n\n\n.popUp{\n    box-sizing: border-box;\n    width: 400px;\n    min-height: 400px;\n    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.4);\n    position: fixed;\n    transform: translate(-50%, -50%) scale(1);\n    top: 50%;\n    left: 50%;\n    background-color: var(--lightGrey1);\n    border-radius: 15px;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: stretch;\n    z-index: 2;\n    padding: 50px 70px;\n    gap: 15px;\n}\n\n\n.popUp h2{\n    text-align: center;\n    font-size: 45px;\n}\n\ninput, input:focus-visible, input:focus, select, option{\n    height: 30px;\n    border-radius: 6px;\n    border-width: 2px;\n    border-color: rgb(148, 148, 148);\n    background-color: white;\n    border-style: solid;\n    outline: none;\n    padding-left: 5px;\n}\n\n.inputDiv{\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n}\n\nlabel{\n    font-size: 17px;\n}\n\nbutton{\n    height: 35px;\n    font-size: 17px;\n    margin: 0 30px;\n    border-radius: 7px;\n        border-style: solid;\n            outline: none;\n            background-color: var(--lightGrey3);\n            margin-top: 15px;\n}\n\n.popUp hr{\n    width: 100%;\n    height: 1px;\n    background-color: var(--darkGrey1)\n\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3832,7 +3832,7 @@ function displayProject(project) {
   const projectList = document.querySelector(".projectList");
   const projectAccess = document.createElement("div");
   projectAccess.classList.add("projectAccess");
-  projectAccess.classList.add(project.title);
+  projectAccess.id = project.ID;
   _listen_js__WEBPACK_IMPORTED_MODULE_0__.addListener(projectAccess, displayTasksProject, project);
   projectList.appendChild(projectAccess);
   const p = document.createElement("p");
@@ -3851,8 +3851,10 @@ function displayProject(project) {
 }
 
 function deleteProject(project) {
-  const projectDiv = document.querySelector(`.${project.title}`);
+  const projectDiv = document.querySelector(`#${project.ID}`);
   projectDiv.remove();
+  const projectIndex = _manage_js__WEBPACK_IMPORTED_MODULE_1__.arrProjects.findIndex((x) => x.id === project.ID);
+  _manage_js__WEBPACK_IMPORTED_MODULE_1__.arrProjects.splice(projectIndex, 1);
 }
 
 function displayAllProjects(arr) {
@@ -3883,7 +3885,7 @@ function displayTask(task) {
   const rightBar = document.querySelector(".rightBar");
   const projectCard = document.createElement("div");
   projectCard.classList.add(`projectCard`);
-  projectCard.classList.add(task.title);
+  projectCard.id = task.ID;
   rightBar.appendChild(projectCard);
   const mainRow = document.createElement("div");
   mainRow.classList.add("projectRow");
@@ -3900,7 +3902,7 @@ function displayTask(task) {
   mainRow.appendChild(title);
   const date = document.createElement("div");
   date.classList.add("date");
-  date.innerText = (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(task.dueDate, "dd-mm-yyyy");
+  date.innerText = (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(task.dueDate, "dd-MM-yyyy");
   mainRow.appendChild(date);
   const arrow = document.createElement("img");
   arrow.src = svg.arrow;
@@ -3938,7 +3940,7 @@ function displayTasksThisWeek(arr) {
 }
 
 function expandTask(task) {
-  const projectCard = document.querySelector(`.projectCard.${task.title}`);
+  const projectCard = document.querySelector(`#${task.ID}`);
   const extendedRow = document.createElement("div");
   extendedRow.classList.add("projectRow");
   extendedRow.classList.add("extendedRow");
@@ -3950,10 +3952,12 @@ function expandTask(task) {
   const editIcon = document.createElement("img");
   editIcon.classList.add("editIcon");
   editIcon.src = svg.edit;
+  _listen_js__WEBPACK_IMPORTED_MODULE_0__.addListener(editIcon, editTask, task);
   extendedRow.appendChild(editIcon);
   const deleteIcon = document.createElement("img");
   deleteIcon.classList.add("deleteIcon");
   deleteIcon.src = svg.delete;
+  _listen_js__WEBPACK_IMPORTED_MODULE_0__.addListener(deleteIcon, deleteTask, task);
   extendedRow.appendChild(deleteIcon);
   const moveArrow = projectCard.querySelector("img.arrow");
   _listen_js__WEBPACK_IMPORTED_MODULE_0__.addListenerOnce(moveArrow, contractTask, task);
@@ -3961,8 +3965,7 @@ function expandTask(task) {
 }
 
 function contractTask(task) {
-  console.log(task);
-  const thisProjectCard = document.querySelector(`.projectCard.${task.title}`);
+  const thisProjectCard = document.querySelector(`#${task.ID}`);
   console.log(thisProjectCard);
   const extendedRow = thisProjectCard.querySelector(".extendedRow");
   console.log(extendedRow);
@@ -3970,6 +3973,15 @@ function contractTask(task) {
   const moveArrow = thisProjectCard.querySelector(".arrow");
   _listen_js__WEBPACK_IMPORTED_MODULE_0__.addListenerOnce(moveArrow, expandTask, task);
   moveArrow.classList.remove("down");
+}
+
+function deleteTask(task) {
+  const div = document.querySelector(`#${task.ID}`);
+  div.remove();
+  console.log(task.project);
+  const arr = task.project.tasks;
+  const taskIndex = arr.indexOf(task);
+  arr.splice(taskIndex, 1);
 }
 
 // PopUps
@@ -4002,6 +4014,7 @@ function createInputText(div, name, fill) {
   input.name = name;
   input.value = fill;
   inputDiv.appendChild(input);
+  return input;
 }
 
 function createInputDate(div, name, date) {
@@ -4046,11 +4059,18 @@ function createSelectPriority(div) {
 
 function createProject() {
   const popDiv = createPopUp("New Project");
-  createInputText(popDiv, "Title", "");
+  const input = createInputText(popDiv, "Title", "");
   const button = document.createElement("button");
   button.classList.add("sendForm");
   button.innerText = "Create Project";
   popDiv.appendChild(button);
+  const addProject = (arr) => {
+    arr.push(new _manage_js__WEBPACK_IMPORTED_MODULE_1__.project(input.value));
+    displayProject(arr[arr.length - 1]);
+    console.log(_manage_js__WEBPACK_IMPORTED_MODULE_1__.arrProjects);
+  };
+  _listen_js__WEBPACK_IMPORTED_MODULE_0__.addListener(button, addProject, _manage_js__WEBPACK_IMPORTED_MODULE_1__.arrProjects);
+  _listen_js__WEBPACK_IMPORTED_MODULE_0__.addListener(button, closePopUp);
 }
 
 function editProject(project) {
@@ -4108,30 +4128,21 @@ function closePopUp() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addListener": () => (/* binding */ addListener),
-/* harmony export */   "addListenerOnce": () => (/* binding */ addListenerOnce),
-/* harmony export */   "cursorListeners": () => (/* binding */ cursorListeners)
+/* harmony export */   "addListenerOnce": () => (/* binding */ addListenerOnce)
 /* harmony export */ });
 function addListener(button, action, parameter1, parameter2) {
-  button.checkListener = true;
+  button.style.cursor = "pointer";
   button.addEventListener("click", function () {
     action(parameter1, parameter2);
   });
 }
 
 function addListenerOnce(button, action, parameter1, parameter2) {
+  button.style.cursor = "pointer";
   button.checkListener = true;
   button.addEventListener("click", function listenerFunction() {
     button.removeEventListener("click", listenerFunction);
     action(parameter1, parameter2);
-  });
-}
-
-// Cursor
-function cursorListeners() {
-  const elements = document.querySelectorAll("button, img, div");
-
-  elements.forEach((element) => {
-    if (element.checkListener) element.style.cursor = "pointer";
   });
 }
 
@@ -4165,35 +4176,37 @@ svgContext.keys().forEach((key) => {
   svg[fileName] = svgContext(key);
 });
 
+// Random ID
+
+function generateRandomID() {
+  var result = "";
+  var characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var charactersLength = characters.length;
+  for (var i = 0; i < 8; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+
 // Project
 class project {
   constructor(title) {
     this.title = title;
     this.tasks = [];
-  }
-
-  static addProject(title, arr) {
-    arr.push(new project(title));
-  }
-
-  static editProject(newTitle, oldTitle, arr) {
-    const index = arr.findIndex((element) => element.title === oldTitle);
-    arr[index].title = newTitle;
-  }
-
-  static deleteProject(oldTitle, arr) {
-    const index = arr.findIndex((element) => element.title === oldTitle);
-    arr.splice(index, 1);
+    this.ID = generateRandomID();
   }
 }
 
 // Task
 class task {
-  constructor(title, description, dueDate, priority) {
+  constructor(title, description, dueDate, priority, inProject) {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;
+    this.ID = generateRandomID();
+    this.project = inProject;
   }
 
   static addTask(title, description, dueDate, priority, arr, projectTitle) {
@@ -4224,16 +4237,6 @@ class task {
     arr[projectIndex].tasks[taskIndex].description = description;
     arr[projectIndex].tasks[taskIndex].dueDate = dueDate;
     arr[projectIndex].tasks[taskIndex].priority = priority;
-  }
-
-  static deleteTask(oldTItle, arr, projectTitle) {
-    const projectIndex = arr.findIndex(
-      (element) => element.title === projectTitle
-    );
-    const taskIndex = arr[projectIndex].tasks.findIndex(
-      (element) => element.title === oldTitle
-    );
-    arr[projectIndex].tasks.splice(taskIndex, 1);
   }
 }
 
@@ -4457,10 +4460,11 @@ _manage_js__WEBPACK_IMPORTED_MODULE_2__.arrProjects[0].tasks[0] = new _manage_js
   "titulo",
   "descripcion",
   new Date(),
-  "medium"
+  "medium",
+  _manage_js__WEBPACK_IMPORTED_MODULE_2__.arrProjects[0]
 );
-_manage_js__WEBPACK_IMPORTED_MODULE_2__.arrProjects[0].tasks[1] = new _manage_js__WEBPACK_IMPORTED_MODULE_2__.task(
-  "titulo",
+_manage_js__WEBPACK_IMPORTED_MODULE_2__.arrProjects[1].tasks[0] = new _manage_js__WEBPACK_IMPORTED_MODULE_2__.task(
+  "titulo2",
   "descripcion",
   new Date(),
   "medium"
@@ -4470,7 +4474,6 @@ _manage_js__WEBPACK_IMPORTED_MODULE_2__.arrProjects[0].tasks[1] = new _manage_js
 
 (function initialListeners() {
   const tasksToday = document.querySelector(".quickAccess.today");
-  console.log(tasksToday);
   _listen_js__WEBPACK_IMPORTED_MODULE_4__.addListener(tasksToday, _display_js__WEBPACK_IMPORTED_MODULE_3__.displayTasksToday, _manage_js__WEBPACK_IMPORTED_MODULE_2__.arrProjects);
   const tasksThisWeek = document.querySelector(".quickAccess.thisWeek");
   _listen_js__WEBPACK_IMPORTED_MODULE_4__.addListener(
@@ -4485,8 +4488,6 @@ _display_js__WEBPACK_IMPORTED_MODULE_3__.displayAllProjects(_manage_js__WEBPACK_
 _display_js__WEBPACK_IMPORTED_MODULE_3__.displayTasksToday(_manage_js__WEBPACK_IMPORTED_MODULE_2__.arrProjects);
 
 _display_js__WEBPACK_IMPORTED_MODULE_3__.displayNewProjectButton();
-
-(0,_listen_js__WEBPACK_IMPORTED_MODULE_4__.cursorListeners)();
 
 })();
 

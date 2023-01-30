@@ -12,10 +12,11 @@ manage.arrProjects[0].tasks[0] = new manage.task(
   "titulo",
   "descripcion",
   new Date(),
-  "medium"
+  "medium",
+  manage.arrProjects[0]
 );
-manage.arrProjects[0].tasks[1] = new manage.task(
-  "titulo",
+manage.arrProjects[1].tasks[0] = new manage.task(
+  "titulo2",
   "descripcion",
   new Date(),
   "medium"
@@ -25,7 +26,6 @@ manage.arrProjects[0].tasks[1] = new manage.task(
 
 (function initialListeners() {
   const tasksToday = document.querySelector(".quickAccess.today");
-  console.log(tasksToday);
   listen.addListener(tasksToday, display.displayTasksToday, manage.arrProjects);
   const tasksThisWeek = document.querySelector(".quickAccess.thisWeek");
   listen.addListener(
@@ -40,5 +40,3 @@ display.displayAllProjects(manage.arrProjects);
 display.displayTasksToday(manage.arrProjects);
 
 display.displayNewProjectButton();
-
-cursorListeners();
