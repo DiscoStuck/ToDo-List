@@ -11,6 +11,10 @@ svgContext.keys().forEach((key) => {
   svg[fileName] = svgContext(key);
 });
 
+// Active Filter
+
+let activeFilter;
+
 // Random ID
 
 function generateRandomID() {
@@ -48,30 +52,10 @@ class task {
     const projectIndex = arr.findIndex(
       (element) => element.title === projectTitle
     );
-    arr[projectIndex].tasks.push(
-      new task(title, description, dueDate, priority)
-    );
-  }
-
-  static editTask(
-    title,
-    description,
-    dueDate,
-    priority,
-    oldTitle,
-    arr,
-    projectTitle
-  ) {
-    const projectIndex = arr.findIndex(
-      (element) => element.title === projectTitle
-    );
-    const taskIndex = arr[projectIndex].tasks.findIndex(
-      (element) => element.title === oldTitle
-    );
-    arr[projectIndex].tasks[taskIndex].title = title;
-    arr[projectIndex].tasks[taskIndex].description = description;
-    arr[projectIndex].tasks[taskIndex].dueDate = dueDate;
-    arr[projectIndex].tasks[taskIndex].priority = priority;
+    console.log(projectIndex);
+    const newTask = new task(title, description, dueDate, priority);
+    arr[projectIndex].tasks.push(newTask);
+    return newTask;
   }
 }
 

@@ -35,8 +35,9 @@ manage.arrProjects[1].tasks[0] = new manage.task(
   );
 })();
 
+display.displayNewProjectButton();
+display.displayNewTaskButton();
+
 display.displayAllProjects(manage.arrProjects);
 
 display.displayTasksToday(manage.arrProjects);
-
-display.displayNewProjectButton();

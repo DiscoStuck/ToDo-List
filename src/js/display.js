@@ -4,6 +4,7 @@ import {
   isSameDay,
   isSameWeek,
   isToday,
+  parseISO,
 } from "date-fns";
 import * as listen from "./listen.js";
 import * as manage from "./manage.js";
@@ -69,14 +70,20 @@ function displayNewProjectButton() {
   listen.addListener(projectAccess, createProject);
 }
 
+function changeActiveFilter(next) {
+  const previous = document.querySelector(".activeFilter");
+  previous.classList.remove("activeFilter");
+  next.classList.add(".activeFilter");
+}
+
 // Tasks
 
 function displayTask(task) {
-  const rightBar = document.querySelector(".rightBar");
+  const newTaskButton = document.querySelector(".newTaskButton");
   const projectCard = document.createElement("div");
   projectCard.classList.add(`projectCard`);
   projectCard.id = task.ID;
-  rightBar.appendChild(projectCard);
+  newTaskButton.before(projectCard);
   const mainRow = document.createElement("div");
   mainRow.classList.add("projectRow");
   mainRow.classList.add("mainRow");
@@ -174,6 +181,21 @@ function deleteTask(task) {
   arr.splice(taskIndex, 1);
 }
 
+function displayNewTaskButton() {
+  const rightBar = document.querySelector(".rightBar");
+  const projectCard = document.createElement("div");
+  projectCard.classList.add("newTaskButton");
+  rightBar.appendChild(projectCard);
+  const newIcon = document.createElement("img");
+  newIcon.classList.add("newIcon");
+  newIcon.src = svg.new;
+  projectCard.appendChild(newIcon);
+  const p = document.createElement("p");
+  p.innerText = "New Task";
+  projectCard.appendChild(p);
+  listen.addListener(projectCard, createTask);
+}
+
 // PopUps
 
 function createPopUp(title) {
@@ -220,6 +242,28 @@ function createInputDate(div, name, date) {
   input.type = "date";
   input.value = date;
   inputDiv.appendChild(input);
+  return parseISO(input.value);
+}
+
+function createInputProject(div, arr) {
+  console.log(arr);
+  const inputDiv = document.createElement("div");
+  inputDiv.classList.add("inputDiv");
+  div.appendChild(inputDiv);
+  const label = document.createElement("label");
+  label.innerText = "Project";
+  label.for = "project";
+  inputDiv.appendChild(label);
+  const select = document.createElement("select");
+  select.name = "project";
+  inputDiv.appendChild(select);
+  arr.forEach((project) => {
+    const option = document.createElement("option");
+    option.value = project.title;
+    option.innerText = project.title;
+    select.appendChild(option);
+  });
+  return select;
 }
 
 function createSelectPriority(div) {
@@ -245,6 +289,7 @@ function createSelectPriority(div) {
   high.value = "high";
   high.innerText = "High";
   select.appendChild(high);
+  return select.value;
 }
 
 function createProject() {
@@ -265,22 +310,48 @@ function createProject() {
 
 function editProject(project) {
   const popDiv = createPopUp("Edit Project");
-  createInputText(popDiv, "Title", project.title);
+  const input = createInputText(popDiv, "Title", project.title);
   const button = document.createElement("button");
   button.classList.add("sendForm");
   button.innerText = "Edit";
+  button.addEventListener("click", function () {
+    console.log("hola");
+    const projectDiv = document.querySelector(`#${project.ID}`);
+    const p = projectDiv.querySelector("p");
+    project.title = input.value;
+    p.innerText = input.value;
+    closePopUp();
+  });
   popDiv.appendChild(button);
 }
 
-function createTask(project) {
+function createTask() {
   const popDiv = createPopUp("New Task");
-  createInputText(popDiv, "Title", "");
-  createInputText(popDiv, "Description", "");
-  createInputDate(popDiv, "Date", format(new Date(), "yyyy-MM-dd"));
-  createSelectPriority(popDiv);
+  const title = createInputText(popDiv, "Title", "");
+  const description = createInputText(popDiv, "Description", "");
+  const date = createInputDate(
+    popDiv,
+    "Date",
+    format(new Date(), "yyyy-MM-dd")
+  );
+  const inProject = createInputProject(popDiv, manage.arrProjects);
+  console.log(inProject);
+  const priority = createSelectPriority(popDiv);
   const button = document.createElement("button");
   button.classList.add("sendForm");
   button.innerText = "Create Task";
+  console.log(title);
+  button.addEventListener("click", function () {
+    const task = manage.task.addTask(
+      title.value,
+      description.value,
+      date,
+      priority,
+      manage.arrProjects,
+      inProject.value
+    );
+    displayTask(task);
+  });
   popDiv.appendChild(button);
 }
 
@@ -293,6 +364,9 @@ function editTask(task) {
   const button = document.createElement("button");
   button.classList.add("sendForm");
   button.innerText = "Edit";
+  button.addEventListener("click", function () {
+    closePopUp();
+  });
   popDiv.appendChild(button);
 }
 
@@ -310,6 +384,7 @@ export {
   displayTask,
   displayTasksToday,
   displayTasksThisWeek,
+  displayNewTaskButton,
   createProject,
   editProject,
   createTask,

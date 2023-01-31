@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* Colors */\n:root{\n    --lightGrey1: #f8f8f8;\n    --lightGrey2: #F1F1F1;\n    --lightGrey3: #E7E7E7;\n    --darkGrey1: #343434;\n}\n\n\nbody{\n    min-height: 100vh;\n    display: flex;\n    flex-direction: column;\n    font-family: Tahoma, sans-serif;\n    color: var(--darkGrey1);\n}\n\n.content {\n    height: 100%;\n    display: flex;\n    flex-grow: 1;\n    align-items: stretch;\n}\n\n/* Header */\n.header{\n    min-width: 1000px;\n    height: 100px;\n    background-color: var(--lightGrey3);\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n\n.header h2{\n    font-size: 40px;\n    margin-left: 50px;\n}\n\n\n\n/* Left bar */\n.leftBar{\n    min-width: 300px;\n    width: 22%;\n    background-color: var(--lightGrey2);\n    padding: 30px;\n}\n\n.quickAccessMenu {\n    width: 100%;\n    margin-top: 20px;\n}\n\n.quickAccess, .projectAccess{\n    box-sizing: border-box;\n    height: 60px;\n    width: 100%;\n    border-radius: 5px;\n    margin-bottom: 30px;\n    display: flex;\n    padding: 0 25px 0 25px;\n}\n\n.leftBar h3{\n    font-size: 45px;\n    margin-bottom: 30px;\n    margin-top: 40px;\n}\n\n.quickAccess{\n    font-size: 26px;\n    background-color: var(--lightGrey3);\n        flex-direction: column;\n            justify-content: center;\n}\n\n\n.projectAccess {\n    background-color: var(--lightGrey3);\n    font-size: 18px;\n    align-items: center;\n    justify-content: space-between;\n    gap: 15px;\n}\n\n.projectAccess p{\n    flex-grow: 1;\n}\n\n.newProjectLeft{\n    display: flex;\n    align-items: center;\n    gap: 10px;\n}\n\n.newIcon{\n    width: 30px;\n    height: 30px;\n}\n\n/* Right bar */\n.rightBar{\n    min-width: 700px;\n    width: 78%;\n    background-color: var(--lightGrey1);\n    display: flex;\n    flex-direction: column;\n    padding: 50px;\n    gap: 30px;\n}\n\n.projectCard{\n    min-height: 60px;\n    width: 100%;\n    background-color: var(--lightGrey3);\n    border-radius: 5px;\n}\n\n.projectRow{\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 20px;\n    gap: 20px;\n}\n\n.mainRow{\n    min-height:60px;\n}\n\n.flag{\n    width: 30px;\n    height: 30px;\n    flex-grow: 0;\n    flex: 0 0 auto;\n}\n\n.arrow {\n    width: 20px;\n    height: 20px;\n    rotate: 180deg;\n    flex-grow: 0;\n    flex: 0 0 auto;\n}\n\n.projectRow h3{\n    flex: 1 1 auto;\n    font-size: 18px;\n}\n\n.extendedRow{\n    padding: 5px 10px 10px 20px;\n    gap: 30px;\n    min-height: 45px;\n    background-color: var(--lightGrey2);\n    border-radius: 0 0 5px 5px;\n}\n\n.description{\n    margin-right: 20px;\n    flex-basis: 100%;\n}\n.date{\n    flex-grow: 0 1 auto;\n}\n\n.down{\n    rotate: 90deg;\n}\n\n.editIcon{\n    width: 22px;\n    height: 22px;\n    fill: black;\n    stroke: black;\n    flex-basis: auto;\n}\n\n.deleteIcon{\n    width: 30px;\n    height: 30px;\n    flex-basis: auto;\n}\n\n/* Pop-ups */\n.overlay{\n    position: fixed;\n    width: 0;\n    height: 0;\n    background-color: rgba(255, 255, 255, 0.7);\n    z-index: 1;\n    width: 100vw;\n        height: 100vh;\n}\n\n\n.popUp{\n    box-sizing: border-box;\n    width: 400px;\n    min-height: 400px;\n    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.4);\n    position: fixed;\n    transform: translate(-50%, -50%) scale(1);\n    top: 50%;\n    left: 50%;\n    background-color: var(--lightGrey1);\n    border-radius: 15px;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: stretch;\n    z-index: 2;\n    padding: 50px 70px;\n    gap: 15px;\n}\n\n\n.popUp h2{\n    text-align: center;\n    font-size: 45px;\n}\n\ninput, input:focus-visible, input:focus, select, option{\n    height: 30px;\n    border-radius: 6px;\n    border-width: 2px;\n    border-color: rgb(148, 148, 148);\n    background-color: white;\n    border-style: solid;\n    outline: none;\n    padding-left: 5px;\n}\n\n.inputDiv{\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n}\n\nlabel{\n    font-size: 17px;\n}\n\nbutton{\n    height: 35px;\n    font-size: 17px;\n    margin: 0 30px;\n    border-radius: 7px;\n        border-style: solid;\n            outline: none;\n            background-color: var(--lightGrey3);\n            margin-top: 15px;\n}\n\n.popUp hr{\n    width: 100%;\n    height: 1px;\n    background-color: var(--darkGrey1)\n\n}", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"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","sourcesContent":["/* Colors */\n:root{\n    --lightGrey1: #f8f8f8;\n    --lightGrey2: #F1F1F1;\n    --lightGrey3: #E7E7E7;\n    --darkGrey1: #343434;\n}\n\n\nbody{\n    min-height: 100vh;\n    display: flex;\n    flex-direction: column;\n    font-family: Tahoma, sans-serif;\n    color: var(--darkGrey1);\n}\n\n.content {\n    height: 100%;\n    display: flex;\n    flex-grow: 1;\n    align-items: stretch;\n}\n\n/* Header */\n.header{\n    min-width: 1000px;\n    height: 100px;\n    background-color: var(--lightGrey3);\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n\n.header h2{\n    font-size: 40px;\n    margin-left: 50px;\n}\n\n\n\n/* Left bar */\n.leftBar{\n    min-width: 300px;\n    width: 22%;\n    background-color: var(--lightGrey2);\n    padding: 30px;\n}\n\n.quickAccessMenu {\n    width: 100%;\n    margin-top: 20px;\n}\n\n.quickAccess, .projectAccess{\n    box-sizing: border-box;\n    height: 60px;\n    width: 100%;\n    border-radius: 5px;\n    margin-bottom: 30px;\n    display: flex;\n    padding: 0 25px 0 25px;\n}\n\n.leftBar h3{\n    font-size: 45px;\n    margin-bottom: 30px;\n    margin-top: 40px;\n}\n\n.quickAccess{\n    font-size: 26px;\n    background-color: var(--lightGrey3);\n        flex-direction: column;\n            justify-content: center;\n}\n\n\n.projectAccess {\n    background-color: var(--lightGrey3);\n    font-size: 18px;\n    align-items: center;\n    justify-content: space-between;\n    gap: 15px;\n}\n\n.projectAccess p{\n    flex-grow: 1;\n}\n\n.newProjectLeft{\n    display: flex;\n    align-items: center;\n    gap: 10px;\n}\n\n.newIcon{\n    width: 30px;\n    height: 30px;\n}\n\n/* Right bar */\n.rightBar{\n    min-width: 700px;\n    width: 78%;\n    background-color: var(--lightGrey1);\n    display: flex;\n    flex-direction: column;\n    padding: 50px;\n    gap: 30px;\n}\n\n.projectCard{\n    min-height: 60px;\n    width: 100%;\n    background-color: var(--lightGrey3);\n    border-radius: 5px;\n}\n\n.projectRow{\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 20px;\n    gap: 20px;\n}\n\n.mainRow{\n    min-height:60px;\n}\n\n.flag{\n    width: 30px;\n    height: 30px;\n    flex-grow: 0;\n    flex: 0 0 auto;\n}\n\n.arrow {\n    width: 20px;\n    height: 20px;\n    rotate: 180deg;\n    flex-grow: 0;\n    flex: 0 0 auto;\n}\n\n.projectRow h3{\n    flex: 1 1 auto;\n    font-size: 18px;\n}\n\n.extendedRow{\n    padding: 5px 10px 10px 20px;\n    gap: 30px;\n    min-height: 45px;\n    background-color: var(--lightGrey2);\n    border-radius: 0 0 5px 5px;\n}\n\n.description{\n    margin-right: 20px;\n    flex-basis: 100%;\n}\n.date{\n    flex-grow: 0 1 auto;\n}\n\n.down{\n    rotate: 90deg;\n}\n\n.editIcon{\n    width: 22px;\n    height: 22px;\n    fill: black;\n    stroke: black;\n    flex-basis: auto;\n}\n\n.deleteIcon{\n    width: 30px;\n    height: 30px;\n    flex-basis: auto;\n}\n\n/* Pop-ups */\n.overlay{\n    position: fixed;\n    width: 0;\n    height: 0;\n    background-color: rgba(255, 255, 255, 0.7);\n    z-index: 1;\n    width: 100vw;\n        height: 100vh;\n}\n\n\n.popUp{\n    box-sizing: border-box;\n    width: 400px;\n    min-height: 400px;\n    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.4);\n    position: fixed;\n    transform: translate(-50%, -50%) scale(1);\n    top: 50%;\n    left: 50%;\n    background-color: var(--lightGrey1);\n    border-radius: 15px;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: stretch;\n    z-index: 2;\n    padding: 50px 70px;\n    gap: 15px;\n}\n\n\n.popUp h2{\n    text-align: center;\n    font-size: 45px;\n}\n\ninput, input:focus-visible, input:focus, select, option{\n    height: 30px;\n    border-radius: 6px;\n    border-width: 2px;\n    border-color: rgb(148, 148, 148);\n    background-color: white;\n    border-style: solid;\n    outline: none;\n    padding-left: 5px;\n}\n\n.inputDiv{\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n}\n\nlabel{\n    font-size: 17px;\n}\n\nbutton{\n    height: 35px;\n    font-size: 17px;\n    margin: 0 30px;\n    border-radius: 7px;\n        border-style: solid;\n            outline: none;\n            background-color: var(--lightGrey3);\n            margin-top: 15px;\n}\n\n.popUp hr{\n    width: 100%;\n    height: 1px;\n    background-color: var(--darkGrey1)\n\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* Colors */\n:root{\n    --lightGrey1: #f8f8f8;\n    --lightGrey2: #F1F1F1;\n    --lightGrey3: #E7E7E7;\n    --darkGrey1: #343434;\n}\n\n\nbody{\n    min-height: 100vh;\n    display: flex;\n    flex-direction: column;\n    font-family: Tahoma, sans-serif;\n    color: var(--darkGrey1);\n}\n\n.content {\n    height: 100%;\n    display: flex;\n    flex-grow: 1;\n    align-items: stretch;\n}\n\n/* Header */\n.header{\n    min-width: 1000px;\n    height: 100px;\n    background-color: var(--lightGrey3);\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n\n.header h2{\n    font-size: 40px;\n    margin-left: 50px;\n}\n\n\n\n/* Left bar */\n.leftBar{\n    min-width: 300px;\n    width: 22%;\n    background-color: var(--lightGrey2);\n    padding: 30px;\n}\n\n.quickAccessMenu {\n    width: 100%;\n    margin-top: 20px;\n}\n\n.quickAccess, .projectAccess{\n    box-sizing: border-box;\n    height: 60px;\n    width: 100%;\n    border-radius: 5px;\n    margin-bottom: 30px;\n    display: flex;\n    padding: 0 25px 0 25px;\n}\n\n.leftBar h3{\n    font-size: 45px;\n    margin-bottom: 30px;\n    margin-top: 40px;\n}\n\n.quickAccess{\n    font-size: 26px;\n    background-color: var(--lightGrey3);\n        flex-direction: column;\n            justify-content: center;\n}\n\n\n.projectAccess {\n    background-color: var(--lightGrey3);\n    font-size: 18px;\n    align-items: center;\n    justify-content: space-between;\n    gap: 15px;\n}\n\n.projectAccess p{\n    flex-grow: 1;\n}\n\n.newProjectLeft{\n    display: flex;\n    align-items: center;\n    gap: 10px;\n}\n\n.newIcon{\n    width: 30px;\n    height: 30px;\n}\n\n.activeFilter{\n    box-shadow: 0 0 10px 0 rgb(102, 133, 168)}\n/* Right bar */\n.rightBar{\n    min-width: 700px;\n    width: 78%;\n    background-color: var(--lightGrey1);\n    display: flex;\n    flex-direction: column;\n    padding: 50px;\n    gap: 30px;\n}\n\n.projectCard{\n    min-height: 60px;\n    width: 100%;\n    background-color: var(--lightGrey3);\n    border-radius: 5px;\n}\n\n.projectRow{\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 20px;\n    gap: 20px;\n}\n\n.mainRow{\n    min-height:60px;\n}\n\n.flag{\n    width: 30px;\n    height: 30px;\n    flex-grow: 0;\n    flex: 0 0 auto;\n}\n\n.arrow {\n    width: 20px;\n    height: 20px;\n    rotate: 180deg;\n    flex-grow: 0;\n    flex: 0 0 auto;\n}\n\n.projectRow h3{\n    flex: 1 1 auto;\n    font-size: 18px;\n}\n\n.extendedRow{\n    padding: 5px 10px 10px 20px;\n    gap: 30px;\n    min-height: 45px;\n    background-color: var(--lightGrey2);\n    border-radius: 0 0 5px 5px;\n}\n\n.description{\n    margin-right: 20px;\n    flex-basis: 100%;\n}\n.date{\n    flex-grow: 0 1 auto;\n}\n\n.down{\n    rotate: 90deg;\n}\n\n.editIcon{\n    width: 22px;\n    height: 22px;\n    fill: black;\n    stroke: black;\n    flex-basis: auto;\n}\n\n.deleteIcon{\n    width: 30px;\n    height: 30px;\n    flex-basis: auto;\n}\n\n.newTaskButton{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 15px;\n    font-size: 18px;\n    min-height: 60px;\n    /* width: 100%; */\n    background-color: var(--lightGrey3);\n    border-radius: 5px;\n}\n\n/* Pop-ups */\n.overlay{\n    position: fixed;\n    width: 0;\n    height: 0;\n    background-color: rgba(255, 255, 255, 0.7);\n    z-index: 1;\n    width: 100vw;\n        height: 100vh;\n}\n\n\n.popUp{\n    box-sizing: border-box;\n    width: 400px;\n    min-height: 400px;\n    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.4);\n    position: fixed;\n    transform: translate(-50%, -50%) scale(1);\n    top: 50%;\n    left: 50%;\n    background-color: var(--lightGrey1);\n    border-radius: 15px;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: stretch;\n    z-index: 2;\n    padding: 50px 70px;\n    gap: 15px;\n}\n\n\n.popUp h2{\n    text-align: center;\n    font-size: 45px;\n}\n\ninput, input:focus-visible, input:focus, select, option{\n    height: 30px;\n    border-radius: 6px;\n    border-width: 2px;\n    border-color: rgb(148, 148, 148);\n    background-color: white;\n    border-style: solid;\n    outline: none;\n    padding-left: 5px;\n}\n\n\n.inputDiv{\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n}\n\nlabel{\n    font-size: 17px;\n}\n\nbutton{\n    height: 35px;\n    font-size: 17px;\n    margin: 0 30px;\n    border-radius: 7px;\n        border-style: solid;\n            outline: none;\n            background-color: var(--lightGrey3);\n            margin-top: 15px;\n}\n\n.popUp hr{\n    width: 100%;\n    height: 1px;\n    background-color: var(--darkGrey1)\n\n}", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"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","sourcesContent":["/* Colors */\n:root{\n    --lightGrey1: #f8f8f8;\n    --lightGrey2: #F1F1F1;\n    --lightGrey3: #E7E7E7;\n    --darkGrey1: #343434;\n}\n\n\nbody{\n    min-height: 100vh;\n    display: flex;\n    flex-direction: column;\n    font-family: Tahoma, sans-serif;\n    color: var(--darkGrey1);\n}\n\n.content {\n    height: 100%;\n    display: flex;\n    flex-grow: 1;\n    align-items: stretch;\n}\n\n/* Header */\n.header{\n    min-width: 1000px;\n    height: 100px;\n    background-color: var(--lightGrey3);\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n\n.header h2{\n    font-size: 40px;\n    margin-left: 50px;\n}\n\n\n\n/* Left bar */\n.leftBar{\n    min-width: 300px;\n    width: 22%;\n    background-color: var(--lightGrey2);\n    padding: 30px;\n}\n\n.quickAccessMenu {\n    width: 100%;\n    margin-top: 20px;\n}\n\n.quickAccess, .projectAccess{\n    box-sizing: border-box;\n    height: 60px;\n    width: 100%;\n    border-radius: 5px;\n    margin-bottom: 30px;\n    display: flex;\n    padding: 0 25px 0 25px;\n}\n\n.leftBar h3{\n    font-size: 45px;\n    margin-bottom: 30px;\n    margin-top: 40px;\n}\n\n.quickAccess{\n    font-size: 26px;\n    background-color: var(--lightGrey3);\n        flex-direction: column;\n            justify-content: center;\n}\n\n\n.projectAccess {\n    background-color: var(--lightGrey3);\n    font-size: 18px;\n    align-items: center;\n    justify-content: space-between;\n    gap: 15px;\n}\n\n.projectAccess p{\n    flex-grow: 1;\n}\n\n.newProjectLeft{\n    display: flex;\n    align-items: center;\n    gap: 10px;\n}\n\n.newIcon{\n    width: 30px;\n    height: 30px;\n}\n\n.activeFilter{\n    box-shadow: 0 0 10px 0 rgb(102, 133, 168)}\n/* Right bar */\n.rightBar{\n    min-width: 700px;\n    width: 78%;\n    background-color: var(--lightGrey1);\n    display: flex;\n    flex-direction: column;\n    padding: 50px;\n    gap: 30px;\n}\n\n.projectCard{\n    min-height: 60px;\n    width: 100%;\n    background-color: var(--lightGrey3);\n    border-radius: 5px;\n}\n\n.projectRow{\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 20px;\n    gap: 20px;\n}\n\n.mainRow{\n    min-height:60px;\n}\n\n.flag{\n    width: 30px;\n    height: 30px;\n    flex-grow: 0;\n    flex: 0 0 auto;\n}\n\n.arrow {\n    width: 20px;\n    height: 20px;\n    rotate: 180deg;\n    flex-grow: 0;\n    flex: 0 0 auto;\n}\n\n.projectRow h3{\n    flex: 1 1 auto;\n    font-size: 18px;\n}\n\n.extendedRow{\n    padding: 5px 10px 10px 20px;\n    gap: 30px;\n    min-height: 45px;\n    background-color: var(--lightGrey2);\n    border-radius: 0 0 5px 5px;\n}\n\n.description{\n    margin-right: 20px;\n    flex-basis: 100%;\n}\n.date{\n    flex-grow: 0 1 auto;\n}\n\n.down{\n    rotate: 90deg;\n}\n\n.editIcon{\n    width: 22px;\n    height: 22px;\n    fill: black;\n    stroke: black;\n    flex-basis: auto;\n}\n\n.deleteIcon{\n    width: 30px;\n    height: 30px;\n    flex-basis: auto;\n}\n\n.newTaskButton{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 15px;\n    font-size: 18px;\n    min-height: 60px;\n    /* width: 100%; */\n    background-color: var(--lightGrey3);\n    border-radius: 5px;\n}\n\n/* Pop-ups */\n.overlay{\n    position: fixed;\n    width: 0;\n    height: 0;\n    background-color: rgba(255, 255, 255, 0.7);\n    z-index: 1;\n    width: 100vw;\n        height: 100vh;\n}\n\n\n.popUp{\n    box-sizing: border-box;\n    width: 400px;\n    min-height: 400px;\n    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.4);\n    position: fixed;\n    transform: translate(-50%, -50%) scale(1);\n    top: 50%;\n    left: 50%;\n    background-color: var(--lightGrey1);\n    border-radius: 15px;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: stretch;\n    z-index: 2;\n    padding: 50px 70px;\n    gap: 15px;\n}\n\n\n.popUp h2{\n    text-align: center;\n    font-size: 45px;\n}\n\ninput, input:focus-visible, input:focus, select, option{\n    height: 30px;\n    border-radius: 6px;\n    border-width: 2px;\n    border-color: rgb(148, 148, 148);\n    background-color: white;\n    border-style: solid;\n    outline: none;\n    padding-left: 5px;\n}\n\n\n.inputDiv{\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n}\n\nlabel{\n    font-size: 17px;\n}\n\nbutton{\n    height: 35px;\n    font-size: 17px;\n    margin: 0 30px;\n    border-radius: 7px;\n        border-style: solid;\n            outline: none;\n            background-color: var(--lightGrey3);\n            margin-top: 15px;\n}\n\n.popUp hr{\n    width: 100%;\n    height: 1px;\n    background-color: var(--darkGrey1)\n\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1813,6 +1813,220 @@ function addMilliseconds(dirtyDate, dirtyAmount) {
 
 /***/ }),
 
+/***/ "./node_modules/date-fns/esm/constants/index.js":
+/*!******************************************************!*\
+  !*** ./node_modules/date-fns/esm/constants/index.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "daysInWeek": () => (/* binding */ daysInWeek),
+/* harmony export */   "daysInYear": () => (/* binding */ daysInYear),
+/* harmony export */   "maxTime": () => (/* binding */ maxTime),
+/* harmony export */   "millisecondsInHour": () => (/* binding */ millisecondsInHour),
+/* harmony export */   "millisecondsInMinute": () => (/* binding */ millisecondsInMinute),
+/* harmony export */   "millisecondsInSecond": () => (/* binding */ millisecondsInSecond),
+/* harmony export */   "minTime": () => (/* binding */ minTime),
+/* harmony export */   "minutesInHour": () => (/* binding */ minutesInHour),
+/* harmony export */   "monthsInQuarter": () => (/* binding */ monthsInQuarter),
+/* harmony export */   "monthsInYear": () => (/* binding */ monthsInYear),
+/* harmony export */   "quartersInYear": () => (/* binding */ quartersInYear),
+/* harmony export */   "secondsInDay": () => (/* binding */ secondsInDay),
+/* harmony export */   "secondsInHour": () => (/* binding */ secondsInHour),
+/* harmony export */   "secondsInMinute": () => (/* binding */ secondsInMinute),
+/* harmony export */   "secondsInMonth": () => (/* binding */ secondsInMonth),
+/* harmony export */   "secondsInQuarter": () => (/* binding */ secondsInQuarter),
+/* harmony export */   "secondsInWeek": () => (/* binding */ secondsInWeek),
+/* harmony export */   "secondsInYear": () => (/* binding */ secondsInYear)
+/* harmony export */ });
+/**
+ * Days in 1 week.
+ *
+ * @name daysInWeek
+ * @constant
+ * @type {number}
+ * @default
+ */
+var daysInWeek = 7;
+/**
+ * Days in 1 year
+ * One years equals 365.2425 days according to the formula:
+ *
+ * > Leap year occures every 4 years, except for years that are divisable by 100 and not divisable by 400.
+ * > 1 mean year = (365+1/4-1/100+1/400) days = 365.2425 days
+ *
+ * @name daysInYear
+ * @constant
+ * @type {number}
+ * @default
+ */
+
+var daysInYear = 365.2425;
+/**
+ * Maximum allowed time.
+ *
+ * @name maxTime
+ * @constant
+ * @type {number}
+ * @default
+ */
+
+var maxTime = Math.pow(10, 8) * 24 * 60 * 60 * 1000;
+/**
+ * Milliseconds in 1 minute
+ *
+ * @name millisecondsInMinute
+ * @constant
+ * @type {number}
+ * @default
+ */
+
+var millisecondsInMinute = 60000;
+/**
+ * Milliseconds in 1 hour
+ *
+ * @name millisecondsInHour
+ * @constant
+ * @type {number}
+ * @default
+ */
+
+var millisecondsInHour = 3600000;
+/**
+ * Milliseconds in 1 second
+ *
+ * @name millisecondsInSecond
+ * @constant
+ * @type {number}
+ * @default
+ */
+
+var millisecondsInSecond = 1000;
+/**
+ * Minimum allowed time.
+ *
+ * @name minTime
+ * @constant
+ * @type {number}
+ * @default
+ */
+
+var minTime = -maxTime;
+/**
+ * Minutes in 1 hour
+ *
+ * @name minutesInHour
+ * @constant
+ * @type {number}
+ * @default
+ */
+
+var minutesInHour = 60;
+/**
+ * Months in 1 quarter
+ *
+ * @name monthsInQuarter
+ * @constant
+ * @type {number}
+ * @default
+ */
+
+var monthsInQuarter = 3;
+/**
+ * Months in 1 year
+ *
+ * @name monthsInYear
+ * @constant
+ * @type {number}
+ * @default
+ */
+
+var monthsInYear = 12;
+/**
+ * Quarters in 1 year
+ *
+ * @name quartersInYear
+ * @constant
+ * @type {number}
+ * @default
+ */
+
+var quartersInYear = 4;
+/**
+ * Seconds in 1 hour
+ *
+ * @name secondsInHour
+ * @constant
+ * @type {number}
+ * @default
+ */
+
+var secondsInHour = 3600;
+/**
+ * Seconds in 1 minute
+ *
+ * @name secondsInMinute
+ * @constant
+ * @type {number}
+ * @default
+ */
+
+var secondsInMinute = 60;
+/**
+ * Seconds in 1 day
+ *
+ * @name secondsInDay
+ * @constant
+ * @type {number}
+ * @default
+ */
+
+var secondsInDay = secondsInHour * 24;
+/**
+ * Seconds in 1 week
+ *
+ * @name secondsInWeek
+ * @constant
+ * @type {number}
+ * @default
+ */
+
+var secondsInWeek = secondsInDay * 7;
+/**
+ * Seconds in 1 year
+ *
+ * @name secondsInYear
+ * @constant
+ * @type {number}
+ * @default
+ */
+
+var secondsInYear = secondsInDay * daysInYear;
+/**
+ * Seconds in 1 month
+ *
+ * @name secondsInMonth
+ * @constant
+ * @type {number}
+ * @default
+ */
+
+var secondsInMonth = secondsInYear / 12;
+/**
+ * Seconds in 1 quarter
+ *
+ * @name secondsInQuarter
+ * @constant
+ * @type {number}
+ * @default
+ */
+
+var secondsInQuarter = secondsInMonth * 3;
+
+/***/ }),
+
 /***/ "./node_modules/date-fns/esm/format/index.js":
 /*!***************************************************!*\
   !*** ./node_modules/date-fns/esm/format/index.js ***!
@@ -3141,6 +3355,289 @@ var locale = {
 
 /***/ }),
 
+/***/ "./node_modules/date-fns/esm/parseISO/index.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/date-fns/esm/parseISO/index.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ parseISO)
+/* harmony export */ });
+/* harmony import */ var _constants_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constants/index.js */ "./node_modules/date-fns/esm/constants/index.js");
+/* harmony import */ var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_lib/requiredArgs/index.js */ "./node_modules/date-fns/esm/_lib/requiredArgs/index.js");
+/* harmony import */ var _lib_toInteger_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_lib/toInteger/index.js */ "./node_modules/date-fns/esm/_lib/toInteger/index.js");
+
+
+
+/**
+ * @name parseISO
+ * @category Common Helpers
+ * @summary Parse ISO string
+ *
+ * @description
+ * Parse the given string in ISO 8601 format and return an instance of Date.
+ *
+ * Function accepts complete ISO 8601 formats as well as partial implementations.
+ * ISO 8601: http://en.wikipedia.org/wiki/ISO_8601
+ *
+ * If the argument isn't a string, the function cannot parse the string or
+ * the values are invalid, it returns Invalid Date.
+ *
+ * @param {String} argument - the value to convert
+ * @param {Object} [options] - an object with options.
+ * @param {0|1|2} [options.additionalDigits=2] - the additional number of digits in the extended year format
+ * @returns {Date} the parsed date in the local time zone
+ * @throws {TypeError} 1 argument required
+ * @throws {RangeError} `options.additionalDigits` must be 0, 1 or 2
+ *
+ * @example
+ * // Convert string '2014-02-11T11:30:30' to date:
+ * const result = parseISO('2014-02-11T11:30:30')
+ * //=> Tue Feb 11 2014 11:30:30
+ *
+ * @example
+ * // Convert string '+02014101' to date,
+ * // if the additional number of digits in the extended year format is 1:
+ * const result = parseISO('+02014101', { additionalDigits: 1 })
+ * //=> Fri Apr 11 2014 00:00:00
+ */
+
+function parseISO(argument, options) {
+  var _options$additionalDi;
+
+  (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(1, arguments);
+  var additionalDigits = (0,_lib_toInteger_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])((_options$additionalDi = options === null || options === void 0 ? void 0 : options.additionalDigits) !== null && _options$additionalDi !== void 0 ? _options$additionalDi : 2);
+
+  if (additionalDigits !== 2 && additionalDigits !== 1 && additionalDigits !== 0) {
+    throw new RangeError('additionalDigits must be 0, 1 or 2');
+  }
+
+  if (!(typeof argument === 'string' || Object.prototype.toString.call(argument) === '[object String]')) {
+    return new Date(NaN);
+  }
+
+  var dateStrings = splitDateString(argument);
+  var date;
+
+  if (dateStrings.date) {
+    var parseYearResult = parseYear(dateStrings.date, additionalDigits);
+    date = parseDate(parseYearResult.restDateString, parseYearResult.year);
+  }
+
+  if (!date || isNaN(date.getTime())) {
+    return new Date(NaN);
+  }
+
+  var timestamp = date.getTime();
+  var time = 0;
+  var offset;
+
+  if (dateStrings.time) {
+    time = parseTime(dateStrings.time);
+
+    if (isNaN(time)) {
+      return new Date(NaN);
+    }
+  }
+
+  if (dateStrings.timezone) {
+    offset = parseTimezone(dateStrings.timezone);
+
+    if (isNaN(offset)) {
+      return new Date(NaN);
+    }
+  } else {
+    var dirtyDate = new Date(timestamp + time); // js parsed string assuming it's in UTC timezone
+    // but we need it to be parsed in our timezone
+    // so we use utc values to build date in our timezone.
+    // Year values from 0 to 99 map to the years 1900 to 1999
+    // so set year explicitly with setFullYear.
+
+    var result = new Date(0);
+    result.setFullYear(dirtyDate.getUTCFullYear(), dirtyDate.getUTCMonth(), dirtyDate.getUTCDate());
+    result.setHours(dirtyDate.getUTCHours(), dirtyDate.getUTCMinutes(), dirtyDate.getUTCSeconds(), dirtyDate.getUTCMilliseconds());
+    return result;
+  }
+
+  return new Date(timestamp + time + offset);
+}
+var patterns = {
+  dateTimeDelimiter: /[T ]/,
+  timeZoneDelimiter: /[Z ]/i,
+  timezone: /([Z+-].*)$/
+};
+var dateRegex = /^-?(?:(\d{3})|(\d{2})(?:-?(\d{2}))?|W(\d{2})(?:-?(\d{1}))?|)$/;
+var timeRegex = /^(\d{2}(?:[.,]\d*)?)(?::?(\d{2}(?:[.,]\d*)?))?(?::?(\d{2}(?:[.,]\d*)?))?$/;
+var timezoneRegex = /^([+-])(\d{2})(?::?(\d{2}))?$/;
+
+function splitDateString(dateString) {
+  var dateStrings = {};
+  var array = dateString.split(patterns.dateTimeDelimiter);
+  var timeString; // The regex match should only return at maximum two array elements.
+  // [date], [time], or [date, time].
+
+  if (array.length > 2) {
+    return dateStrings;
+  }
+
+  if (/:/.test(array[0])) {
+    timeString = array[0];
+  } else {
+    dateStrings.date = array[0];
+    timeString = array[1];
+
+    if (patterns.timeZoneDelimiter.test(dateStrings.date)) {
+      dateStrings.date = dateString.split(patterns.timeZoneDelimiter)[0];
+      timeString = dateString.substr(dateStrings.date.length, dateString.length);
+    }
+  }
+
+  if (timeString) {
+    var token = patterns.timezone.exec(timeString);
+
+    if (token) {
+      dateStrings.time = timeString.replace(token[1], '');
+      dateStrings.timezone = token[1];
+    } else {
+      dateStrings.time = timeString;
+    }
+  }
+
+  return dateStrings;
+}
+
+function parseYear(dateString, additionalDigits) {
+  var regex = new RegExp('^(?:(\\d{4}|[+-]\\d{' + (4 + additionalDigits) + '})|(\\d{2}|[+-]\\d{' + (2 + additionalDigits) + '})$)');
+  var captures = dateString.match(regex); // Invalid ISO-formatted year
+
+  if (!captures) return {
+    year: NaN,
+    restDateString: ''
+  };
+  var year = captures[1] ? parseInt(captures[1]) : null;
+  var century = captures[2] ? parseInt(captures[2]) : null; // either year or century is null, not both
+
+  return {
+    year: century === null ? year : century * 100,
+    restDateString: dateString.slice((captures[1] || captures[2]).length)
+  };
+}
+
+function parseDate(dateString, year) {
+  // Invalid ISO-formatted year
+  if (year === null) return new Date(NaN);
+  var captures = dateString.match(dateRegex); // Invalid ISO-formatted string
+
+  if (!captures) return new Date(NaN);
+  var isWeekDate = !!captures[4];
+  var dayOfYear = parseDateUnit(captures[1]);
+  var month = parseDateUnit(captures[2]) - 1;
+  var day = parseDateUnit(captures[3]);
+  var week = parseDateUnit(captures[4]);
+  var dayOfWeek = parseDateUnit(captures[5]) - 1;
+
+  if (isWeekDate) {
+    if (!validateWeekDate(year, week, dayOfWeek)) {
+      return new Date(NaN);
+    }
+
+    return dayOfISOWeekYear(year, week, dayOfWeek);
+  } else {
+    var date = new Date(0);
+
+    if (!validateDate(year, month, day) || !validateDayOfYearDate(year, dayOfYear)) {
+      return new Date(NaN);
+    }
+
+    date.setUTCFullYear(year, month, Math.max(dayOfYear, day));
+    return date;
+  }
+}
+
+function parseDateUnit(value) {
+  return value ? parseInt(value) : 1;
+}
+
+function parseTime(timeString) {
+  var captures = timeString.match(timeRegex);
+  if (!captures) return NaN; // Invalid ISO-formatted time
+
+  var hours = parseTimeUnit(captures[1]);
+  var minutes = parseTimeUnit(captures[2]);
+  var seconds = parseTimeUnit(captures[3]);
+
+  if (!validateTime(hours, minutes, seconds)) {
+    return NaN;
+  }
+
+  return hours * _constants_index_js__WEBPACK_IMPORTED_MODULE_2__.millisecondsInHour + minutes * _constants_index_js__WEBPACK_IMPORTED_MODULE_2__.millisecondsInMinute + seconds * 1000;
+}
+
+function parseTimeUnit(value) {
+  return value && parseFloat(value.replace(',', '.')) || 0;
+}
+
+function parseTimezone(timezoneString) {
+  if (timezoneString === 'Z') return 0;
+  var captures = timezoneString.match(timezoneRegex);
+  if (!captures) return 0;
+  var sign = captures[1] === '+' ? -1 : 1;
+  var hours = parseInt(captures[2]);
+  var minutes = captures[3] && parseInt(captures[3]) || 0;
+
+  if (!validateTimezone(hours, minutes)) {
+    return NaN;
+  }
+
+  return sign * (hours * _constants_index_js__WEBPACK_IMPORTED_MODULE_2__.millisecondsInHour + minutes * _constants_index_js__WEBPACK_IMPORTED_MODULE_2__.millisecondsInMinute);
+}
+
+function dayOfISOWeekYear(isoWeekYear, week, day) {
+  var date = new Date(0);
+  date.setUTCFullYear(isoWeekYear, 0, 4);
+  var fourthOfJanuaryDay = date.getUTCDay() || 7;
+  var diff = (week - 1) * 7 + day + 1 - fourthOfJanuaryDay;
+  date.setUTCDate(date.getUTCDate() + diff);
+  return date;
+} // Validation functions
+// February is null to handle the leap year (using ||)
+
+
+var daysInMonths = [31, null, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+function isLeapYearIndex(year) {
+  return year % 400 === 0 || year % 4 === 0 && year % 100 !== 0;
+}
+
+function validateDate(year, month, date) {
+  return month >= 0 && month <= 11 && date >= 1 && date <= (daysInMonths[month] || (isLeapYearIndex(year) ? 29 : 28));
+}
+
+function validateDayOfYearDate(year, dayOfYear) {
+  return dayOfYear >= 1 && dayOfYear <= (isLeapYearIndex(year) ? 366 : 365);
+}
+
+function validateWeekDate(_year, week, day) {
+  return week >= 1 && week <= 53 && day >= 0 && day <= 6;
+}
+
+function validateTime(hours, minutes, seconds) {
+  if (hours === 24) {
+    return minutes === 0 && seconds === 0;
+  }
+
+  return seconds >= 0 && seconds < 60 && minutes >= 0 && minutes < 60 && hours >= 0 && hours < 25;
+}
+
+function validateTimezone(_hours, minutes) {
+  return minutes >= 0 && minutes <= 59;
+}
+
+/***/ }),
+
 /***/ "./node_modules/date-fns/esm/startOfDay/index.js":
 /*!*******************************************************!*\
   !*** ./node_modules/date-fns/esm/startOfDay/index.js ***!
@@ -3800,6 +4297,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "createTask": () => (/* binding */ createTask),
 /* harmony export */   "displayAllProjects": () => (/* binding */ displayAllProjects),
 /* harmony export */   "displayNewProjectButton": () => (/* binding */ displayNewProjectButton),
+/* harmony export */   "displayNewTaskButton": () => (/* binding */ displayNewTaskButton),
 /* harmony export */   "displayProject": () => (/* binding */ displayProject),
 /* harmony export */   "displayTask": () => (/* binding */ displayTask),
 /* harmony export */   "displayTasksThisWeek": () => (/* binding */ displayTasksThisWeek),
@@ -3812,6 +4310,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/format/index.js");
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/isSameDay/index.js");
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/isSameWeek/index.js");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/parseISO/index.js");
 /* harmony import */ var _listen_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./listen.js */ "./src/js/listen.js");
 /* harmony import */ var _manage_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./manage.js */ "./src/js/manage.js");
 
@@ -3879,14 +4378,20 @@ function displayNewProjectButton() {
   _listen_js__WEBPACK_IMPORTED_MODULE_0__.addListener(projectAccess, createProject);
 }
 
+function changeActiveFilter(next) {
+  const previous = document.querySelector(".activeFilter");
+  previous.classList.remove("activeFilter");
+  next.classList.add(".activeFilter");
+}
+
 // Tasks
 
 function displayTask(task) {
-  const rightBar = document.querySelector(".rightBar");
+  const newTaskButton = document.querySelector(".newTaskButton");
   const projectCard = document.createElement("div");
   projectCard.classList.add(`projectCard`);
   projectCard.id = task.ID;
-  rightBar.appendChild(projectCard);
+  newTaskButton.before(projectCard);
   const mainRow = document.createElement("div");
   mainRow.classList.add("projectRow");
   mainRow.classList.add("mainRow");
@@ -3984,6 +4489,21 @@ function deleteTask(task) {
   arr.splice(taskIndex, 1);
 }
 
+function displayNewTaskButton() {
+  const rightBar = document.querySelector(".rightBar");
+  const projectCard = document.createElement("div");
+  projectCard.classList.add("newTaskButton");
+  rightBar.appendChild(projectCard);
+  const newIcon = document.createElement("img");
+  newIcon.classList.add("newIcon");
+  newIcon.src = svg.new;
+  projectCard.appendChild(newIcon);
+  const p = document.createElement("p");
+  p.innerText = "New Task";
+  projectCard.appendChild(p);
+  _listen_js__WEBPACK_IMPORTED_MODULE_0__.addListener(projectCard, createTask);
+}
+
 // PopUps
 
 function createPopUp(title) {
@@ -4030,6 +4550,28 @@ function createInputDate(div, name, date) {
   input.type = "date";
   input.value = date;
   inputDiv.appendChild(input);
+  return (0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])(input.value);
+}
+
+function createInputProject(div, arr) {
+  console.log(arr);
+  const inputDiv = document.createElement("div");
+  inputDiv.classList.add("inputDiv");
+  div.appendChild(inputDiv);
+  const label = document.createElement("label");
+  label.innerText = "Project";
+  label.for = "project";
+  inputDiv.appendChild(label);
+  const select = document.createElement("select");
+  select.name = "project";
+  inputDiv.appendChild(select);
+  arr.forEach((project) => {
+    const option = document.createElement("option");
+    option.value = project.title;
+    option.innerText = project.title;
+    select.appendChild(option);
+  });
+  return select;
 }
 
 function createSelectPriority(div) {
@@ -4055,6 +4597,7 @@ function createSelectPriority(div) {
   high.value = "high";
   high.innerText = "High";
   select.appendChild(high);
+  return select.value;
 }
 
 function createProject() {
@@ -4075,22 +4618,48 @@ function createProject() {
 
 function editProject(project) {
   const popDiv = createPopUp("Edit Project");
-  createInputText(popDiv, "Title", project.title);
+  const input = createInputText(popDiv, "Title", project.title);
   const button = document.createElement("button");
   button.classList.add("sendForm");
   button.innerText = "Edit";
+  button.addEventListener("click", function () {
+    console.log("hola");
+    const projectDiv = document.querySelector(`#${project.ID}`);
+    const p = projectDiv.querySelector("p");
+    project.title = input.value;
+    p.innerText = input.value;
+    closePopUp();
+  });
   popDiv.appendChild(button);
 }
 
-function createTask(project) {
+function createTask() {
   const popDiv = createPopUp("New Task");
-  createInputText(popDiv, "Title", "");
-  createInputText(popDiv, "Description", "");
-  createInputDate(popDiv, "Date", (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(new Date(), "yyyy-MM-dd"));
-  createSelectPriority(popDiv);
+  const title = createInputText(popDiv, "Title", "");
+  const description = createInputText(popDiv, "Description", "");
+  const date = createInputDate(
+    popDiv,
+    "Date",
+    (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(new Date(), "yyyy-MM-dd")
+  );
+  const inProject = createInputProject(popDiv, _manage_js__WEBPACK_IMPORTED_MODULE_1__.arrProjects);
+  console.log(inProject);
+  const priority = createSelectPriority(popDiv);
   const button = document.createElement("button");
   button.classList.add("sendForm");
   button.innerText = "Create Task";
+  console.log(title);
+  button.addEventListener("click", function () {
+    const task = _manage_js__WEBPACK_IMPORTED_MODULE_1__.task.addTask(
+      title.value,
+      description.value,
+      date,
+      priority,
+      _manage_js__WEBPACK_IMPORTED_MODULE_1__.arrProjects,
+      inProject.value
+    );
+    displayTask(task);
+  });
   popDiv.appendChild(button);
 }
 
@@ -4103,6 +4672,9 @@ function editTask(task) {
   const button = document.createElement("button");
   button.classList.add("sendForm");
   button.innerText = "Edit";
+  button.addEventListener("click", function () {
+    closePopUp();
+  });
   popDiv.appendChild(button);
 }
 
@@ -4176,6 +4748,10 @@ svgContext.keys().forEach((key) => {
   svg[fileName] = svgContext(key);
 });
 
+// Active Filter
+
+let activeFilter;
+
 // Random ID
 
 function generateRandomID() {
@@ -4213,30 +4789,10 @@ class task {
     const projectIndex = arr.findIndex(
       (element) => element.title === projectTitle
     );
-    arr[projectIndex].tasks.push(
-      new task(title, description, dueDate, priority)
-    );
-  }
-
-  static editTask(
-    title,
-    description,
-    dueDate,
-    priority,
-    oldTitle,
-    arr,
-    projectTitle
-  ) {
-    const projectIndex = arr.findIndex(
-      (element) => element.title === projectTitle
-    );
-    const taskIndex = arr[projectIndex].tasks.findIndex(
-      (element) => element.title === oldTitle
-    );
-    arr[projectIndex].tasks[taskIndex].title = title;
-    arr[projectIndex].tasks[taskIndex].description = description;
-    arr[projectIndex].tasks[taskIndex].dueDate = dueDate;
-    arr[projectIndex].tasks[taskIndex].priority = priority;
+    console.log(projectIndex);
+    const newTask = new task(title, description, dueDate, priority);
+    arr[projectIndex].tasks.push(newTask);
+    return newTask;
   }
 }
 
@@ -4483,11 +5039,12 @@ _manage_js__WEBPACK_IMPORTED_MODULE_2__.arrProjects[1].tasks[0] = new _manage_js
   );
 })();
 
+_display_js__WEBPACK_IMPORTED_MODULE_3__.displayNewProjectButton();
+_display_js__WEBPACK_IMPORTED_MODULE_3__.displayNewTaskButton();
+
 _display_js__WEBPACK_IMPORTED_MODULE_3__.displayAllProjects(_manage_js__WEBPACK_IMPORTED_MODULE_2__.arrProjects);
 
 _display_js__WEBPACK_IMPORTED_MODULE_3__.displayTasksToday(_manage_js__WEBPACK_IMPORTED_MODULE_2__.arrProjects);
-
-_display_js__WEBPACK_IMPORTED_MODULE_3__.displayNewProjectButton();
 
 })();
 
