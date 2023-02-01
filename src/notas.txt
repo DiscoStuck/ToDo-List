@@ -1,1 +1,2 @@
-Problems with arrow listener
+- Pop up edit task
+- active filter

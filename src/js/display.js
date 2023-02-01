@@ -25,6 +25,7 @@ function displayProject(project) {
   projectAccess.classList.add("projectAccess");
   projectAccess.id = project.ID;
   listen.addListener(projectAccess, displayTasksProject, project);
+  listen.addListener(projectAccess, changeActiveFilter, project);
   projectList.appendChild(projectAccess);
   const p = document.createElement("p");
   p.textContent = project.title;
@@ -71,9 +72,13 @@ function displayNewProjectButton() {
 }
 
 function changeActiveFilter(next) {
-  const previous = document.querySelector(".activeFilter");
-  previous.classList.remove("activeFilter");
-  next.classList.add(".activeFilter");
+  const previousDiv = document.querySelector(".activeFilter");
+  previousDiv.classList.remove("activeFilter");
+  console.log(next);
+  if ("ID" in next) {
+    const nextDiv = document.querySelector(`#${next.ID}`);
+    nextDiv.classList.add("activeFilter");
+  } else next.classList.add("activeFilter");
 }
 
 // Tasks
@@ -116,6 +121,11 @@ function deleteAllTasks() {
 function displayTasksProject(project) {
   deleteAllTasks();
   project.tasks.forEach((element) => displayTask(element));
+}
+
+function findProjectIndex(ID) {
+  const projectIndex = manage.arrProjects.findIndex((x) => x.id === ID);
+  return projectIndex;
 }
 
 function displayTasksToday(arr) {
@@ -163,9 +173,7 @@ function expandTask(task) {
 
 function contractTask(task) {
   const thisProjectCard = document.querySelector(`#${task.ID}`);
-  console.log(thisProjectCard);
   const extendedRow = thisProjectCard.querySelector(".extendedRow");
-  console.log(extendedRow);
   extendedRow.remove();
   const moveArrow = thisProjectCard.querySelector(".arrow");
   listen.addListenerOnce(moveArrow, expandTask, task);
@@ -175,7 +183,6 @@ function contractTask(task) {
 function deleteTask(task) {
   const div = document.querySelector(`#${task.ID}`);
   div.remove();
-  console.log(task.project);
   const arr = task.project.tasks;
   const taskIndex = arr.indexOf(task);
   arr.splice(taskIndex, 1);
@@ -246,7 +253,6 @@ function createInputDate(div, name, date) {
 }
 
 function createInputProject(div, arr) {
-  console.log(arr);
   const inputDiv = document.createElement("div");
   inputDiv.classList.add("inputDiv");
   div.appendChild(inputDiv);
@@ -260,6 +266,7 @@ function createInputProject(div, arr) {
   arr.forEach((project) => {
     const option = document.createElement("option");
     option.value = project.title;
+    option.ID = project.ID;
     option.innerText = project.title;
     select.appendChild(option);
   });
@@ -302,7 +309,6 @@ function createProject() {
   const addProject = (arr) => {
     arr.push(new manage.project(input.value));
     displayProject(arr[arr.length - 1]);
-    console.log(manage.arrProjects);
   };
   listen.addListener(button, addProject, manage.arrProjects);
   listen.addListener(button, closePopUp);
@@ -315,7 +321,6 @@ function editProject(project) {
   button.classList.add("sendForm");
   button.innerText = "Edit";
   button.addEventListener("click", function () {
-    console.log("hola");
     const projectDiv = document.querySelector(`#${project.ID}`);
     const p = projectDiv.querySelector("p");
     project.title = input.value;
@@ -335,12 +340,10 @@ function createTask() {
     format(new Date(), "yyyy-MM-dd")
   );
   const inProject = createInputProject(popDiv, manage.arrProjects);
-  console.log(inProject);
   const priority = createSelectPriority(popDiv);
   const button = document.createElement("button");
   button.classList.add("sendForm");
   button.innerText = "Create Task";
-  console.log(title);
   button.addEventListener("click", function () {
     const task = manage.task.addTask(
       title.value,
@@ -350,24 +353,52 @@ function createTask() {
       manage.arrProjects,
       inProject.value
     );
-    displayTask(task);
+    console.log(inProject.value);
+    const projectIndex = findProjectIndex(inProject.ID);
+    displayTasksProject(manage.arrProjects[projectIndex]);
+    changeActiveFilter(manage.arrProjects[projectIndex]);
+    closePopUp();
   });
   popDiv.appendChild(button);
 }
 
 function editTask(task) {
   const popDiv = createPopUp("Edit Task");
-  createInputText(popDiv, "Title", task.title);
-  createInputText(popDiv, "Description", task.description);
-  createInputDate(popDiv, "Date", format(task.dueDate, "yyyy-MM-dd"));
-  createSelectPriority(popDiv);
+  const taskDiv = document.querySelector(`#${task.ID}`);
+  const title = createInputText(popDiv, "Title", task.title);
+  const description = createInputText(popDiv, "Description", task.description);
+  const date = createInputDate(
+    popDiv,
+    "Date",
+    format(task.dueDate, "yyyy-MM-dd")
+  );
+  const priority = createSelectPriority(popDiv);
+  const inProject = createInputProject(popDiv, manage.arrProjects);
   const button = document.createElement("button");
   button.classList.add("sendForm");
   button.innerText = "Edit";
   button.addEventListener("click", function () {
+    task.title = title.value;
+    task.description = description.value;
+    task.dueDate = date;
+    task.priority = priority;
+    task.project = inProject.value;
+    updateTaskDiv(task, priority);
+    const h3 = taskDiv.querySelector("h3");
+    h3.innerText = title.value;
+    const dateField = taskDiv.querySelector(".date");
+    dateField.innerText = format(date, "dd-MM-yyyy");
     closePopUp();
   });
   popDiv.appendChild(button);
+}
+
+function updateTaskDiv(task, priority) {
+  const taskDiv = document.querySelector(`#${task.ID}`);
+  const flag = taskDiv.querySelector(".flag");
+  if (priority === "low") flag.src = svg.greenFlagIcon;
+  else if (priority === "medium") flag.src = svg.yellowFlagIcon;
+  else flag.src = svg.redFlagIcon;
 }
 
 function closePopUp() {
@@ -391,4 +422,5 @@ export {
   editTask,
   expandTask,
   svg,
+  changeActiveFilter,
 };

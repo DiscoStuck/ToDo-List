@@ -27,12 +27,14 @@ manage.arrProjects[1].tasks[0] = new manage.task(
 (function initialListeners() {
   const tasksToday = document.querySelector(".quickAccess.today");
   listen.addListener(tasksToday, display.displayTasksToday, manage.arrProjects);
+  listen.addListener(tasksToday, display.changeActiveFilter, tasksToday);
   const tasksThisWeek = document.querySelector(".quickAccess.thisWeek");
   listen.addListener(
     tasksThisWeek,
     display.displayTasksThisWeek,
     manage.arrProjects
   );
+  listen.addListener(tasksThisWeek, display.changeActiveFilter, tasksThisWeek);
 })();
 
 display.displayNewProjectButton();
