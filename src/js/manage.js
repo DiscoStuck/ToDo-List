@@ -1,8 +1,6 @@
-import { format, isSameDay, isSameWeek } from "date-fns";
-
 // Array of projects
 
-const arrProjects = [];
+let arrProjects = [];
 
 const svgContext = require.context("../svg", false, /\.svg$/);
 const svg = {};
@@ -10,10 +8,6 @@ svgContext.keys().forEach((key) => {
   const fileName = key.replace("./", "").replace(".svg", "");
   svg[fileName] = svgContext(key);
 });
-
-// Active Filter
-
-let activeFilter;
 
 // Random ID
 
@@ -59,4 +53,43 @@ class task {
   }
 }
 
-export { project, task, arrProjects };
+// Local Storage
+function storageAvailable(type) {
+  let storage;
+  try {
+    storage = window[type];
+    const x = "__storage_test__";
+    storage.setItem(x, x);
+    storage.removeItem(x);
+    return true;
+  } catch (e) {
+    return (
+      e instanceof DOMException &&
+      // everything except Firefox
+      (e.code === 22 ||
+        // Firefox
+        e.code === 1014 ||
+        // test name field too, because code might not be present
+        // everything except Firefox
+        e.name === "QuotaExceededError" ||
+        // Firefox
+        e.name === "NS_ERROR_DOM_QUOTA_REACHED") &&
+      // acknowledge QuotaExceededError only if there's something already stored
+      storage &&
+      storage.length !== 0
+    );
+  }
+}
+
+function saveToStorage() {
+  console.log("hola");
+  if (storageAvailable("localStorage"))
+    localStorage.setItem("arrProjects", JSON.stringify(arrProjects));
+}
+
+function getFromStorage() {
+  if (storageAvailable("localStorage"))
+    arrProjects = JSON.parse(localStorage.getItem("arrProjects"));
+}
+
+export { project, task, arrProjects, saveToStorage, getFromStorage };

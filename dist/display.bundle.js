@@ -3729,14 +3729,14 @@ function addListenerOnce(button, action, parameter1, parameter2) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "arrProjects": () => (/* binding */ arrProjects),
+/* harmony export */   "getFromStorage": () => (/* binding */ getFromStorage),
 /* harmony export */   "project": () => (/* binding */ project),
+/* harmony export */   "saveToStorage": () => (/* binding */ saveToStorage),
 /* harmony export */   "task": () => (/* binding */ task)
 /* harmony export */ });
-
-
 // Array of projects
 
-const arrProjects = [];
+let arrProjects = [];
 
 const svgContext = __webpack_require__("./src/svg sync \\.svg$");
 const svg = {};
@@ -3744,10 +3744,6 @@ svgContext.keys().forEach((key) => {
   const fileName = key.replace("./", "").replace(".svg", "");
   svg[fileName] = svgContext(key);
 });
-
-// Active Filter
-
-let activeFilter;
 
 // Random ID
 
@@ -3791,6 +3787,45 @@ class task {
     arr[projectIndex].tasks.push(newTask);
     return newTask;
   }
+}
+
+// Local Storage
+function storageAvailable(type) {
+  let storage;
+  try {
+    storage = window[type];
+    const x = "__storage_test__";
+    storage.setItem(x, x);
+    storage.removeItem(x);
+    return true;
+  } catch (e) {
+    return (
+      e instanceof DOMException &&
+      // everything except Firefox
+      (e.code === 22 ||
+        // Firefox
+        e.code === 1014 ||
+        // test name field too, because code might not be present
+        // everything except Firefox
+        e.name === "QuotaExceededError" ||
+        // Firefox
+        e.name === "NS_ERROR_DOM_QUOTA_REACHED") &&
+      // acknowledge QuotaExceededError only if there's something already stored
+      storage &&
+      storage.length !== 0
+    );
+  }
+}
+
+function saveToStorage() {
+  console.log("hola");
+  if (storageAvailable("localStorage"))
+    localStorage.setItem("arrProjects", JSON.stringify(arrProjects));
+}
+
+function getFromStorage() {
+  if (storageAvailable("localStorage"))
+    arrProjects = JSON.parse(localStorage.getItem("arrProjects"));
 }
 
 
@@ -4041,6 +4076,7 @@ function deleteProject(project) {
   projectDiv.remove();
   const projectIndex = _manage_js__WEBPACK_IMPORTED_MODULE_1__.arrProjects.findIndex((x) => x.id === project.ID);
   _manage_js__WEBPACK_IMPORTED_MODULE_1__.arrProjects.splice(projectIndex, 1);
+  _manage_js__WEBPACK_IMPORTED_MODULE_1__.saveToStorage();
 }
 
 function displayAllProjects(arr) {
@@ -4302,6 +4338,7 @@ function createProject() {
   popDiv.appendChild(button);
   const addProject = (arr) => {
     arr.push(new _manage_js__WEBPACK_IMPORTED_MODULE_1__.project(input.value));
+    _manage_js__WEBPACK_IMPORTED_MODULE_1__.saveToStorage();
     displayProject(arr[arr.length - 1]);
   };
   _listen_js__WEBPACK_IMPORTED_MODULE_0__.addListener(button, addProject, _manage_js__WEBPACK_IMPORTED_MODULE_1__.arrProjects);
@@ -4351,6 +4388,7 @@ function createTask() {
     const projectIndex = findProjectIndex(inProject.ID);
     displayTasksProject(_manage_js__WEBPACK_IMPORTED_MODULE_1__.arrProjects[projectIndex]);
     changeActiveFilter(_manage_js__WEBPACK_IMPORTED_MODULE_1__.arrProjects[projectIndex]);
+    _manage_js__WEBPACK_IMPORTED_MODULE_1__.saveToStorage();
     closePopUp();
   });
   popDiv.appendChild(button);

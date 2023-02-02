@@ -1,11 +1,4 @@
-import {
-  format,
-  formatDuration,
-  isSameDay,
-  isSameWeek,
-  isToday,
-  parseISO,
-} from "date-fns";
+import { format, isSameDay, isSameWeek, parseISO } from "date-fns";
 import * as listen from "./listen.js";
 import * as manage from "./manage.js";
 
@@ -47,6 +40,7 @@ function deleteProject(project) {
   projectDiv.remove();
   const projectIndex = manage.arrProjects.findIndex((x) => x.id === project.ID);
   manage.arrProjects.splice(projectIndex, 1);
+  manage.saveToStorage();
 }
 
 function displayAllProjects(arr) {
@@ -308,6 +302,7 @@ function createProject() {
   popDiv.appendChild(button);
   const addProject = (arr) => {
     arr.push(new manage.project(input.value));
+    manage.saveToStorage();
     displayProject(arr[arr.length - 1]);
   };
   listen.addListener(button, addProject, manage.arrProjects);
@@ -357,6 +352,7 @@ function createTask() {
     const projectIndex = findProjectIndex(inProject.ID);
     displayTasksProject(manage.arrProjects[projectIndex]);
     changeActiveFilter(manage.arrProjects[projectIndex]);
+    manage.saveToStorage();
     closePopUp();
   });
   popDiv.appendChild(button);

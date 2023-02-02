@@ -3,24 +3,28 @@ import "/src/styles.css";
 import * as manage from "./manage.js";
 import * as display from "./display.js";
 import * as listen from "./listen.js";
-import { format, isSameDay, isSameWeek } from "date-fns";
-import { cursorListeners } from "./listen.js";
 
-manage.arrProjects[0] = new manage.project("Project1");
-manage.arrProjects[1] = new manage.project("Project2");
-manage.arrProjects[0].tasks[0] = new manage.task(
-  "titulo",
-  "descripcion",
-  new Date(),
-  "medium",
-  manage.arrProjects[0]
-);
-manage.arrProjects[1].tasks[0] = new manage.task(
-  "titulo2",
-  "descripcion",
-  new Date(),
-  "medium"
-);
+// manage.arrProjects[0] = new manage.project("Project1");
+// manage.arrProjects[1] = new manage.project("Project2");
+// manage.arrProjects[0].tasks[0] = new manage.task(
+//   "titulo",
+//   "descripcion",
+//   new Date(),
+//   "medium",
+//   manage.arrProjects[0]
+// );
+// manage.arrProjects[1].tasks[0] = new manage.task(
+//   "titulo2",
+//   "descripcion",
+//   new Date(),
+//   "medium"
+// );
+
+// Local Storage
+console.log(localStorage);
+
+if (localStorage.arrProjects === "null") localStorage.clear();
+if (localStorage.length > 0) manage.getFromStorage();
 
 // Initial Listeners
 
@@ -40,6 +44,10 @@ manage.arrProjects[1].tasks[0] = new manage.task(
 display.displayNewProjectButton();
 display.displayNewTaskButton();
 
-display.displayAllProjects(manage.arrProjects);
+console.log(manage.arrProjects.length);
+console.log(manage.arrProjects);
 
-display.displayTasksToday(manage.arrProjects);
+if (manage.arrProjects.length != 0) {
+  display.displayAllProjects(manage.arrProjects);
+  display.displayTasksToday(manage.arrProjects);
+}
